@@ -126,8 +126,8 @@ It also forced an honest admission about scope, below.
   motivated this project mostly target LLaVA/MiniGPT-style models, where a language
   prior can override the image. Do not read this as "VLMs don't hallucinate" — read
   it as "this one, on these images, does something different".
-- **Small numbers.** 231 probes over 22 held-out images. 4.8% is two errors. Single
-  percentage points are noise.
+- **Small numbers.** 153 probes over 22 held-out images, 42 of them verified-absent.
+  4.8% is two errors. Single percentage points are noise.
 - The `popular` probe split has only 2 verified items and is reported for
   completeness only.
 
