@@ -1,0 +1,5981 @@
+{
+  "neutral": {
+    "metrics": {
+      "overall": {
+        "n": 239,
+        "accuracy": 0.7740585774058577,
+        "precision": 0.9682539682539683,
+        "recall": 0.7093023255813954,
+        "f1": 0.8187919463087249,
+        "yes_rate": 0.5271966527196653,
+        "unparsed": 0,
+        "tp": 122,
+        "fp": 4,
+        "tn": 63,
+        "fn": 50
+      },
+      "present": {
+        "n": 172,
+        "accuracy": 0.7093023255813954,
+        "precision": 1.0,
+        "recall": 0.7093023255813954,
+        "f1": 0.8299319727891157,
+        "yes_rate": 0.7093023255813954,
+        "unparsed": 0,
+        "tp": 122,
+        "fp": 0,
+        "tn": 0,
+        "fn": 50
+      },
+      "adversarial": {
+        "n": 216,
+        "accuracy": 0.7592592592592593,
+        "precision": 0.9838709677419355,
+        "recall": 0.7093023255813954,
+        "f1": 0.8243243243243245,
+        "yes_rate": 0.5740740740740741,
+        "unparsed": 0,
+        "tp": 122,
+        "fp": 2,
+        "tn": 42,
+        "fn": 50,
+        "hallucination_rate": 0.045454545454545456,
+        "n_absent": 44
+      },
+      "random": {
+        "n": 193,
+        "accuracy": 0.7357512953367875,
+        "precision": 0.991869918699187,
+        "recall": 0.7093023255813954,
+        "f1": 0.8271186440677966,
+        "yes_rate": 0.6373056994818653,
+        "unparsed": 0,
+        "tp": 122,
+        "fp": 1,
+        "tn": 20,
+        "fn": 50,
+        "hallucination_rate": 0.047619047619047616,
+        "n_absent": 21
+      },
+      "popular": {
+        "n": 174,
+        "accuracy": 0.7068965517241379,
+        "precision": 0.991869918699187,
+        "recall": 0.7093023255813954,
+        "f1": 0.8271186440677966,
+        "yes_rate": 0.7068965517241379,
+        "unparsed": 0,
+        "tp": 122,
+        "fp": 1,
+        "tn": 1,
+        "fn": 50,
+        "hallucination_rate": 0.5,
+        "n_absent": 2
+      },
+      "absent_all": {
+        "n": 67,
+        "hallucination_rate": 0.05970149253731343
+      }
+    },
+    "probes": [
+      {
+        "file_name": "000000103548.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000103548.jpg",
+        "object": "sheep",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000103548.jpg",
+        "object": "bear",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000103548.jpg",
+        "object": "horse",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000103548.jpg",
+        "object": "elephant",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "skis",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "snowboard",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "skateboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "surfboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "cow",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "sheep",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "truck",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "giraffe",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "elephant",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "horse",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "skis",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "snowboard",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "surfboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "skateboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "baseball bat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "baseball glove",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "cell phone",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "tv",
+        "truth": false,
+        "kind": "popular",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "surfboard",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "umbrella",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "snowboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000531135.jpg",
+        "object": "baseball bat",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000531135.jpg",
+        "object": "baseball glove",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000531135.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000531135.jpg",
+        "object": "tennis racket",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "bicycle",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "surfboard",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "skateboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "bus",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "motorcycle",
+        "truth": false,
+        "kind": "popular",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "clock",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "chair",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "baseball bat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "baseball glove",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "tennis racket",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "umbrella",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "backpack",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "suitcase",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "airplane",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "backpack",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "suitcase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "boat",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "tennis racket",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "baseball bat",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "baseball glove",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "clock",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "train",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "boat",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "airplane",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "fork",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "spoon",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "wine glass",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "bench",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "suitcase",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "baseball glove",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "car",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "motorcycle",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "cake",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "donut",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "airplane",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "bicycle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "train",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "motorcycle",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "hot dog",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "wine glass",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "pizza",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "donut",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "bird",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "umbrella",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "bench",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "vase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "spoon",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "fork",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "knife",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "oven",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "refrigerator",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "sink",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "wine glass",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "microwave",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "apple",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "book",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "couch",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "vase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "backpack",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "car",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "truck",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "suitcase",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "bus",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "car",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "suitcase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "bicycle",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "donut",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "spoon",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "pizza",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "boat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "cow",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "elephant",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "sheep",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "train",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "giraffe",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "backpack",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "boat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "suitcase",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "truck",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "train",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "clock",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "donut",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "hot dog",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "pizza",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "bicycle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "couch",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "truck",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "book",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "vase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "couch",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "fork",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "spoon",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "vase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "wine glass",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "bus",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "car",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "fire hydrant",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "truck",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "bicycle",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      }
+    ]
+  },
+  "leading": {
+    "metrics": {
+      "overall": {
+        "n": 239,
+        "accuracy": 0.7824267782426778,
+        "precision": 0.9347826086956522,
+        "recall": 0.75,
+        "f1": 0.8322580645161289,
+        "yes_rate": 0.5774058577405857,
+        "unparsed": 0,
+        "tp": 129,
+        "fp": 9,
+        "tn": 58,
+        "fn": 43
+      },
+      "present": {
+        "n": 172,
+        "accuracy": 0.75,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571,
+        "yes_rate": 0.75,
+        "unparsed": 0,
+        "tp": 129,
+        "fp": 0,
+        "tn": 0,
+        "fn": 43
+      },
+      "adversarial": {
+        "n": 216,
+        "accuracy": 0.7870370370370371,
+        "precision": 0.9772727272727273,
+        "recall": 0.75,
+        "f1": 0.8486842105263157,
+        "yes_rate": 0.6111111111111112,
+        "unparsed": 0,
+        "tp": 129,
+        "fp": 3,
+        "tn": 41,
+        "fn": 43,
+        "hallucination_rate": 0.06818181818181818,
+        "n_absent": 44
+      },
+      "random": {
+        "n": 193,
+        "accuracy": 0.7512953367875648,
+        "precision": 0.9626865671641791,
+        "recall": 0.75,
+        "f1": 0.8431372549019607,
+        "yes_rate": 0.694300518134715,
+        "unparsed": 0,
+        "tp": 129,
+        "fp": 5,
+        "tn": 16,
+        "fn": 43,
+        "hallucination_rate": 0.23809523809523808,
+        "n_absent": 21
+      },
+      "popular": {
+        "n": 174,
+        "accuracy": 0.7471264367816092,
+        "precision": 0.9923076923076923,
+        "recall": 0.75,
+        "f1": 0.8543046357615894,
+        "yes_rate": 0.7471264367816092,
+        "unparsed": 0,
+        "tp": 129,
+        "fp": 1,
+        "tn": 1,
+        "fn": 43,
+        "hallucination_rate": 0.5,
+        "n_absent": 2
+      },
+      "absent_all": {
+        "n": 67,
+        "hallucination_rate": 0.13432835820895522
+      }
+    },
+    "probes": [
+      {
+        "file_name": "000000103548.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000103548.jpg",
+        "object": "sheep",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000103548.jpg",
+        "object": "bear",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000103548.jpg",
+        "object": "horse",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000103548.jpg",
+        "object": "elephant",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "skis",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "snowboard",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "skateboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "surfboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "cow",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "sheep",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "truck",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "giraffe",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "elephant",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "horse",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "skis",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "snowboard",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "surfboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "skateboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "baseball bat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "baseball glove",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "cell phone",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "tv",
+        "truth": false,
+        "kind": "popular",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "surfboard",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "umbrella",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "snowboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000531135.jpg",
+        "object": "baseball bat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000531135.jpg",
+        "object": "baseball glove",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000531135.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000531135.jpg",
+        "object": "tennis racket",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "bicycle",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "surfboard",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "skateboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "bus",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "motorcycle",
+        "truth": false,
+        "kind": "popular",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "clock",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "chair",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "baseball bat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "baseball glove",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "tennis racket",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "umbrella",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "backpack",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "suitcase",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "airplane",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "backpack",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "suitcase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "boat",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "tennis racket",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "baseball bat",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "baseball glove",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "clock",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "train",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "boat",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "airplane",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "fork",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "spoon",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "wine glass",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "bench",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "suitcase",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "baseball glove",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "car",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "motorcycle",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "cake",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "donut",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "airplane",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "bicycle",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "train",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "motorcycle",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "hot dog",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "wine glass",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "pizza",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "donut",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "bird",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "umbrella",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "bench",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "vase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "spoon",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "fork",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "knife",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "oven",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "refrigerator",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "sink",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "wine glass",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "microwave",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "apple",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "book",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "couch",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "vase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "backpack",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "car",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "truck",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "suitcase",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "bus",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "car",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "suitcase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "bicycle",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "donut",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "spoon",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "pizza",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "boat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "cow",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "elephant",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "sheep",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "train",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "giraffe",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "backpack",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "boat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "suitcase",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "truck",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "train",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "clock",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "donut",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "hot dog",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "pizza",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "bicycle",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "couch",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "truck",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "book",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "vase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "couch",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "fork",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "spoon",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "vase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "wine glass",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "bus",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "car",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "fire hydrant",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "truck",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "bicycle",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      }
+    ]
+  },
+  "presupposing": {
+    "metrics": {
+      "overall": {
+        "n": 239,
+        "accuracy": 0.7615062761506276,
+        "precision": 0.9457364341085271,
+        "recall": 0.7093023255813954,
+        "f1": 0.8106312292358805,
+        "yes_rate": 0.5397489539748954,
+        "unparsed": 0,
+        "tp": 122,
+        "fp": 7,
+        "tn": 60,
+        "fn": 50
+      },
+      "present": {
+        "n": 172,
+        "accuracy": 0.7093023255813954,
+        "precision": 1.0,
+        "recall": 0.7093023255813954,
+        "f1": 0.8299319727891157,
+        "yes_rate": 0.7093023255813954,
+        "unparsed": 0,
+        "tp": 122,
+        "fp": 0,
+        "tn": 0,
+        "fn": 50
+      },
+      "adversarial": {
+        "n": 216,
+        "accuracy": 0.7546296296296297,
+        "precision": 0.976,
+        "recall": 0.7093023255813954,
+        "f1": 0.8215488215488217,
+        "yes_rate": 0.5787037037037037,
+        "unparsed": 0,
+        "tp": 122,
+        "fp": 3,
+        "tn": 41,
+        "fn": 50,
+        "hallucination_rate": 0.06818181818181818,
+        "n_absent": 44
+      },
+      "random": {
+        "n": 193,
+        "accuracy": 0.7253886010362695,
+        "precision": 0.976,
+        "recall": 0.7093023255813954,
+        "f1": 0.8215488215488217,
+        "yes_rate": 0.6476683937823834,
+        "unparsed": 0,
+        "tp": 122,
+        "fp": 3,
+        "tn": 18,
+        "fn": 50,
+        "hallucination_rate": 0.14285714285714285,
+        "n_absent": 21
+      },
+      "popular": {
+        "n": 174,
+        "accuracy": 0.7068965517241379,
+        "precision": 0.991869918699187,
+        "recall": 0.7093023255813954,
+        "f1": 0.8271186440677966,
+        "yes_rate": 0.7068965517241379,
+        "unparsed": 0,
+        "tp": 122,
+        "fp": 1,
+        "tn": 1,
+        "fn": 50,
+        "hallucination_rate": 0.5,
+        "n_absent": 2
+      },
+      "absent_all": {
+        "n": 67,
+        "hallucination_rate": 0.1044776119402985
+      }
+    },
+    "probes": [
+      {
+        "file_name": "000000103548.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000103548.jpg",
+        "object": "sheep",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000103548.jpg",
+        "object": "bear",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000103548.jpg",
+        "object": "horse",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000103548.jpg",
+        "object": "elephant",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "skis",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "snowboard",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "skateboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000463542.jpg",
+        "object": "surfboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "cow",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "sheep",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "truck",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "giraffe",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "elephant",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000140583.jpg",
+        "object": "horse",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "skis",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "snowboard",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "surfboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000361919.jpg",
+        "object": "skateboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "baseball bat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "baseball glove",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "cell phone",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000060507.jpg",
+        "object": "tv",
+        "truth": false,
+        "kind": "popular",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "surfboard",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "umbrella",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "snowboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000520659.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000531135.jpg",
+        "object": "baseball bat",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000531135.jpg",
+        "object": "baseball glove",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000531135.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000531135.jpg",
+        "object": "tennis racket",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "bicycle",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "surfboard",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "skateboard",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "bus",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000059635.jpg",
+        "object": "motorcycle",
+        "truth": false,
+        "kind": "popular",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "clock",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "chair",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000173057.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "baseball bat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "baseball glove",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "tennis racket",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000414673.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "umbrella",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "backpack",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000520832.jpg",
+        "object": "suitcase",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "airplane",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "backpack",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "suitcase",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000425221.jpg",
+        "object": "boat",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "tennis racket",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "baseball bat",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "baseball glove",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000410650.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "clock",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "train",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "boat",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000508917.jpg",
+        "object": "airplane",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "fork",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "spoon",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "wine glass",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "bench",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000546219.jpg",
+        "object": "suitcase",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "baseball glove",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "car",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000231508.jpg",
+        "object": "motorcycle",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "cake",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "donut",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000300276.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "airplane",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "bicycle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "train",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000571857.jpg",
+        "object": "motorcycle",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "hot dog",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "wine glass",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "pizza",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000083531.jpg",
+        "object": "donut",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "bird",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "umbrella",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "couch",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "bench",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000066038.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "vase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "spoon",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "fork",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000322429.jpg",
+        "object": "knife",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "oven",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "refrigerator",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "sink",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "wine glass",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000226984.jpg",
+        "object": "microwave",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "apple",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "book",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "couch",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "vase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000340175.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "backpack",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "bench",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "car",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "sports ball",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "truck",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000057597.jpg",
+        "object": "suitcase",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "bus",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "car",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "suitcase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000266981.jpg",
+        "object": "bicycle",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "donut",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "spoon",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000470773.jpg",
+        "object": "pizza",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "boat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "cow",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "elephant",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "sheep",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "train",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000435206.jpg",
+        "object": "giraffe",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "backpack",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "boat",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "suitcase",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "truck",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000511599.jpg",
+        "object": "train",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "clock",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "donut",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "hot dog",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000405195.jpg",
+        "object": "pizza",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "bicycle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "bottle",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "couch",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000153527.jpg",
+        "object": "truck",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "book",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "handbag",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "vase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000154358.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "bowl",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "chair",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "couch",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "cup",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "dining table",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "fork",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "knife",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "potted plant",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "spoon",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "vase",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "wine glass",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000572678.jpg",
+        "object": "bed",
+        "truth": false,
+        "kind": "random",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "bus",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "car",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "fire hydrant",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "person",
+        "truth": true,
+        "kind": "present",
+        "answer": "no",
+        "pred": false
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "truck",
+        "truth": true,
+        "kind": "present",
+        "answer": "yes",
+        "pred": true
+      },
+      {
+        "file_name": "000000161128.jpg",
+        "object": "bicycle",
+        "truth": false,
+        "kind": "adversarial",
+        "answer": "no",
+        "pred": false
+      }
+    ]
+  }
+}

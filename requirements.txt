@@ -1,0 +1,13 @@
+# Prefer CPU-only torch on Linux. PEP 440 sorts the local version "2.x+cpu"
+# above plain "2.x", so pip takes the CPU wheel from this index instead of
+# pulling ~2 GB of CUDA libraries. macOS/Windows have no "+cpu" wheels here, so
+# pip falls through to PyPI and local installs are unaffected.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch>=2.2
+torchvision>=0.17
+transformers>=4.40
+pillow>=10.0
+streamlit>=1.36
+matplotlib>=3.8
+numpy>=1.26

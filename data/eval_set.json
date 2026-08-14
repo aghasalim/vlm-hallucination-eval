@@ -1,0 +1,604 @@
+[
+  {
+    "image_id": 103548,
+    "file_name": "000000103548.jpg",
+    "scene": "flock of sheep in a green pasture, one person walking",
+    "why_hard": "many small animals at distance; livestock siblings are the obvious confusion",
+    "n_instances": 19,
+    "present": [
+      "person",
+      "sheep"
+    ],
+    "absent": {
+      "bear": "adversarial",
+      "horse": "adversarial",
+      "elephant": "adversarial"
+    }
+  },
+  {
+    "image_id": 463542,
+    "file_name": "000000463542.jpg",
+    "scene": "crowded ski slope, dozens of skiers",
+    "why_hard": "board-sport siblings; heavy clutter of small human figures",
+    "n_instances": 25,
+    "present": [
+      "person",
+      "skis",
+      "snowboard"
+    ],
+    "absent": {
+      "skateboard": "adversarial",
+      "surfboard": "adversarial"
+    }
+  },
+  {
+    "image_id": 140583,
+    "file_name": "000000140583.jpg",
+    "scene": "herd of livestock on a mountain road with a red truck",
+    "why_hard": "distant animals against rock; livestock siblings",
+    "n_instances": 21,
+    "present": [
+      "cow",
+      "person",
+      "sheep",
+      "truck"
+    ],
+    "absent": {
+      "giraffe": "adversarial",
+      "elephant": "adversarial",
+      "horse": "adversarial"
+    }
+  },
+  {
+    "image_id": 361919,
+    "file_name": "000000361919.jpg",
+    "scene": "ski resort, skiers in the foreground and a lift building",
+    "why_hard": "board-sport siblings on snow",
+    "n_instances": 21,
+    "present": [
+      "person",
+      "skis",
+      "snowboard"
+    ],
+    "absent": {
+      "surfboard": "adversarial",
+      "skateboard": "adversarial"
+    }
+  },
+  {
+    "image_id": 60507,
+    "file_name": "000000060507.jpg",
+    "scene": "baseball batter and catcher at the plate, packed crowd behind",
+    "why_hard": "very dense crowd; indoor-furniture probes test scene-prior bias",
+    "n_instances": 19,
+    "present": [
+      "baseball bat",
+      "baseball glove",
+      "cell phone",
+      "chair",
+      "person",
+      "sports ball"
+    ],
+    "absent": {
+      "couch": "random",
+      "bed": "random",
+      "tv": "popular"
+    }
+  },
+  {
+    "image_id": 520659,
+    "file_name": "000000520659.jpg",
+    "scene": "beach tent with a rack of surfboards",
+    "why_hard": "a whole rack of boards; snowboard is the sibling that is not there",
+    "n_instances": 29,
+    "present": [
+      "chair",
+      "person",
+      "surfboard",
+      "umbrella"
+    ],
+    "absent": {
+      "snowboard": "adversarial",
+      "couch": "random"
+    }
+  },
+  {
+    "image_id": 531135,
+    "file_name": "000000531135.jpg",
+    "scene": "baseball game seen through the backstop net",
+    "why_hard": "bat and glove present; tennis racket is the racket-sport sibling",
+    "n_instances": 17,
+    "present": [
+      "baseball bat",
+      "baseball glove",
+      "person"
+    ],
+    "absent": {
+      "tennis racket": "adversarial"
+    }
+  },
+  {
+    "image_id": 59635,
+    "file_name": "000000059635.jpg",
+    "scene": "black-and-white river surfing, two stacked panels",
+    "why_hard": "monochrome, motion blur, board sports",
+    "n_instances": 25,
+    "present": [
+      "bicycle",
+      "person",
+      "surfboard"
+    ],
+    "absent": {
+      "skateboard": "adversarial",
+      "bus": "random",
+      "motorcycle": "popular"
+    }
+  },
+  {
+    "image_id": 173057,
+    "file_name": "000000173057.jpg",
+    "scene": "town square with a modernist clock tower and benches",
+    "why_hard": "benches present; chair is the seating sibling",
+    "n_instances": 17,
+    "present": [
+      "bench",
+      "clock",
+      "person"
+    ],
+    "absent": {
+      "chair": "adversarial",
+      "bed": "random",
+      "couch": "random"
+    }
+  },
+  {
+    "image_id": 414673,
+    "file_name": "000000414673.jpg",
+    "scene": "youth baseball game, spectators in folding chairs",
+    "why_hard": "bat and glove present; racket sibling absent",
+    "n_instances": 24,
+    "present": [
+      "baseball bat",
+      "baseball glove",
+      "chair",
+      "person",
+      "sports ball"
+    ],
+    "absent": {
+      "tennis racket": "adversarial",
+      "couch": "random"
+    }
+  },
+  {
+    "image_id": 520832,
+    "file_name": "000000520832.jpg",
+    "scene": "black-and-white street scene, shop hung with umbrellas, one walker",
+    "why_hard": "monochrome and high-contrast silhouettes; bag siblings",
+    "n_instances": 15,
+    "present": [
+      "handbag",
+      "person",
+      "umbrella"
+    ],
+    "absent": {
+      "backpack": "adversarial",
+      "suitcase": "adversarial"
+    }
+  },
+  {
+    "image_id": 425221,
+    "file_name": "000000425221.jpg",
+    "scene": "airport gate, rows of bench seating, aircraft through the glass",
+    "why_hard": "seating siblings; strong indoor-furniture prior",
+    "n_instances": 23,
+    "present": [
+      "airplane",
+      "backpack",
+      "bench",
+      "chair",
+      "person",
+      "suitcase"
+    ],
+    "absent": {
+      "couch": "adversarial",
+      "bed": "random",
+      "boat": "random"
+    }
+  },
+  {
+    "image_id": 410650,
+    "file_name": "000000410650.jpg",
+    "scene": "clay-court tennis player serving, full stands",
+    "why_hard": "racket present; bat and glove are the siblings",
+    "n_instances": 28,
+    "present": [
+      "chair",
+      "person",
+      "sports ball",
+      "tennis racket"
+    ],
+    "absent": {
+      "baseball bat": "adversarial",
+      "baseball glove": "adversarial",
+      "couch": "random"
+    }
+  },
+  {
+    "image_id": 508917,
+    "file_name": "000000508917.jpg",
+    "scene": "railway platform with a diesel locomotive",
+    "why_hard": "transport siblings; busy platform",
+    "n_instances": 18,
+    "present": [
+      "bench",
+      "clock",
+      "handbag",
+      "person",
+      "train"
+    ],
+    "absent": {
+      "boat": "adversarial",
+      "airplane": "adversarial"
+    }
+  },
+  {
+    "image_id": 546219,
+    "file_name": "000000546219.jpg",
+    "scene": "group seated around a restaurant table laid with tableware",
+    "why_hard": "dense tableware; furniture probes test scene bias",
+    "n_instances": 41,
+    "present": [
+      "bottle",
+      "bowl",
+      "chair",
+      "cup",
+      "dining table",
+      "fork",
+      "handbag",
+      "knife",
+      "person",
+      "spoon",
+      "wine glass"
+    ],
+    "absent": {
+      "bed": "random",
+      "bench": "adversarial",
+      "suitcase": "random"
+    }
+  },
+  {
+    "image_id": 231508,
+    "file_name": "000000231508.jpg",
+    "scene": "baseball pitcher mid-delivery, spectators and parked cars behind",
+    "why_hard": "outdoor sport with vehicles at distance",
+    "n_instances": 25,
+    "present": [
+      "baseball glove",
+      "bench",
+      "car",
+      "chair",
+      "person",
+      "sports ball"
+    ],
+    "absent": {
+      "couch": "random",
+      "bed": "random",
+      "motorcycle": "adversarial"
+    }
+  },
+  {
+    "image_id": 300276,
+    "file_name": "000000300276.jpg",
+    "scene": "outdoor stall of decorated cakes and cupcakes under a canopy",
+    "why_hard": "baked-goods siblings; donut is the obvious confusion with cupcakes",
+    "n_instances": 29,
+    "present": [
+      "bench",
+      "bowl",
+      "cake",
+      "chair",
+      "dining table",
+      "person"
+    ],
+    "absent": {
+      "donut": "adversarial",
+      "bed": "random"
+    }
+  },
+  {
+    "image_id": 571857,
+    "file_name": "000000571857.jpg",
+    "scene": "light aircraft and a tent on a desert airstrip",
+    "why_hard": "vehicle siblings in open terrain",
+    "n_instances": 14,
+    "present": [
+      "airplane",
+      "bicycle",
+      "bottle",
+      "chair",
+      "cup",
+      "person"
+    ],
+    "absent": {
+      "train": "adversarial",
+      "couch": "random",
+      "motorcycle": "adversarial"
+    }
+  },
+  {
+    "image_id": 83531,
+    "file_name": "000000083531.jpg",
+    "scene": "close-up of a grill covered in sausages",
+    "why_hard": "food siblings; a grill full of one food type invites others",
+    "n_instances": 19,
+    "present": [
+      "bottle",
+      "cup",
+      "hot dog",
+      "person"
+    ],
+    "absent": {
+      "wine glass": "random",
+      "pizza": "adversarial",
+      "donut": "adversarial"
+    }
+  },
+  {
+    "image_id": 66038,
+    "file_name": "000000066038.jpg",
+    "scene": "beach with striped umbrellas, loungers and a small bird",
+    "why_hard": "seating siblings on sand",
+    "n_instances": 16,
+    "present": [
+      "bird",
+      "chair",
+      "person",
+      "umbrella"
+    ],
+    "absent": {
+      "couch": "adversarial",
+      "bench": "adversarial",
+      "bed": "random"
+    }
+  },
+  {
+    "image_id": 322429,
+    "file_name": "000000322429.jpg",
+    "scene": "shelves of ceramic pottery: bowls, teapots, jugs, vases",
+    "why_hard": "the strongest item in the set: dozens of vessels, zero cutlery",
+    "n_instances": 21,
+    "present": [
+      "bowl",
+      "cup",
+      "vase"
+    ],
+    "absent": {
+      "spoon": "adversarial",
+      "fork": "adversarial",
+      "knife": "adversarial"
+    }
+  },
+  {
+    "image_id": 226984,
+    "file_name": "000000226984.jpg",
+    "scene": "small yellow kitchen with a gas range and refrigerator",
+    "why_hard": "appliance siblings; microwave is the one that is not there",
+    "n_instances": 24,
+    "present": [
+      "bottle",
+      "bowl",
+      "cup",
+      "knife",
+      "oven",
+      "potted plant",
+      "refrigerator",
+      "sink",
+      "wine glass"
+    ],
+    "absent": {
+      "microwave": "adversarial"
+    }
+  },
+  {
+    "image_id": 340175,
+    "file_name": "000000340175.jpg",
+    "scene": "open-plan living room with bookshelves, benches and a leather couch",
+    "why_hard": "seating siblings present in force",
+    "n_instances": 28,
+    "present": [
+      "apple",
+      "bench",
+      "book",
+      "chair",
+      "couch",
+      "dining table",
+      "potted plant",
+      "vase"
+    ],
+    "absent": {
+      "bed": "adversarial"
+    }
+  },
+  {
+    "image_id": 57597,
+    "file_name": "000000057597.jpg",
+    "scene": "girls' football match on a grass pitch, spectators and cars behind",
+    "why_hard": "outdoor sport, distant clutter",
+    "n_instances": 32,
+    "present": [
+      "backpack",
+      "bench",
+      "car",
+      "person",
+      "sports ball",
+      "truck"
+    ],
+    "absent": {
+      "suitcase": "adversarial"
+    }
+  },
+  {
+    "image_id": 266981,
+    "file_name": "000000266981.jpg",
+    "scene": "hotel forecourt, people with a red rolling suitcase",
+    "why_hard": "bag siblings; street vehicles",
+    "n_instances": 28,
+    "present": [
+      "bus",
+      "car",
+      "person",
+      "suitcase"
+    ],
+    "absent": {
+      "bicycle": "adversarial"
+    }
+  },
+  {
+    "image_id": 470773,
+    "file_name": "000000470773.jpg",
+    "scene": "dessert station with spoons of toppings, pastries and a chef",
+    "why_hard": "dense small food items",
+    "n_instances": 31,
+    "present": [
+      "bowl",
+      "cup",
+      "donut",
+      "knife",
+      "person",
+      "potted plant",
+      "spoon"
+    ],
+    "absent": {
+      "pizza": "adversarial"
+    }
+  },
+  {
+    "image_id": 435206,
+    "file_name": "000000435206.jpg",
+    "scene": "hazy shoreline with distant figures and livestock",
+    "why_hard": "extreme haze and distance; deliberately near the limit of legibility",
+    "n_instances": 15,
+    "present": [
+      "boat",
+      "cow",
+      "elephant",
+      "person",
+      "sheep"
+    ],
+    "absent": {
+      "train": "random",
+      "giraffe": "adversarial"
+    }
+  },
+  {
+    "image_id": 511599,
+    "file_name": "000000511599.jpg",
+    "scene": "river bank, long boats being loaded, people carrying bundles",
+    "why_hard": "many small carried objects",
+    "n_instances": 23,
+    "present": [
+      "backpack",
+      "boat",
+      "handbag",
+      "person",
+      "suitcase",
+      "truck"
+    ],
+    "absent": {
+      "train": "random"
+    }
+  },
+  {
+    "image_id": 405195,
+    "file_name": "000000405195.jpg",
+    "scene": "bakery display case packed with doughnuts and pastries",
+    "why_hard": "baked-goods siblings at high density",
+    "n_instances": 17,
+    "present": [
+      "clock",
+      "donut",
+      "hot dog",
+      "person"
+    ],
+    "absent": {
+      "pizza": "adversarial"
+    }
+  },
+  {
+    "image_id": 153527,
+    "file_name": "000000153527.jpg",
+    "scene": "derelict urban yard, timber, junk, a bicycle and a discarded couch",
+    "why_hard": "unstructured clutter",
+    "n_instances": 15,
+    "present": [
+      "bicycle",
+      "bottle",
+      "chair",
+      "couch",
+      "knife",
+      "person"
+    ],
+    "absent": {
+      "truck": "adversarial"
+    }
+  },
+  {
+    "image_id": 154358,
+    "file_name": "000000154358.jpg",
+    "scene": "red-walled sitting room with armchairs and a low table",
+    "why_hard": "seating siblings; bags on the floor",
+    "n_instances": 18,
+    "present": [
+      "book",
+      "chair",
+      "dining table",
+      "handbag",
+      "person",
+      "potted plant",
+      "vase"
+    ],
+    "absent": {
+      "bed": "adversarial"
+    }
+  },
+  {
+    "image_id": 572678,
+    "file_name": "000000572678.jpg",
+    "scene": "bright modern dining room, glass table laid for a meal",
+    "why_hard": "dense tableware, reflective glass",
+    "n_instances": 34,
+    "present": [
+      "bowl",
+      "chair",
+      "couch",
+      "cup",
+      "dining table",
+      "fork",
+      "knife",
+      "potted plant",
+      "spoon",
+      "vase",
+      "wine glass"
+    ],
+    "absent": {
+      "bed": "random"
+    }
+  },
+  {
+    "image_id": 161128,
+    "file_name": "000000161128.jpg",
+    "scene": "no-honking sign beside a road with passing traffic",
+    "why_hard": "sign-dominated frame with vehicles at the edge",
+    "n_instances": 14,
+    "present": [
+      "bus",
+      "car",
+      "fire hydrant",
+      "person",
+      "truck"
+    ],
+    "absent": {
+      "bicycle": "adversarial"
+    }
+  }
+]

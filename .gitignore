@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# COCO images and annotations are not ours to redistribute; `make data` fetches
+# them. data/eval_set.json -- the hand-written ground truth, which is the actual
+# deliverable -- is committed and references images by COCO id.
+data/images/
+data/annotations/
+data/sheets/
+data/eval_set_draft.json

@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pillow numpy
+
+      # These tests need no model weights and no COCO images, only the committed
+      # data/eval_set.json. They are the ones that matter: they fail if a probe
+      # drifts outside COCO's 80 categories, or if a probe is marked both present
+      # and absent -- either of which would silently corrupt every number in the
+      # README. The image-existence test is skipped because `make data` has not
+      # run on the runner.
+      - name: Test evaluation set integrity
+        run: python -m pytest tests/ -q -k "not images_exist"
