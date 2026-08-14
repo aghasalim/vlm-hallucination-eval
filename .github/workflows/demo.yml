@@ -1,0 +1,62 @@
+name: demo-link
+
+# Deliberately NOT part of ci.yml. A demo goes down because Streamlit Cloud
+# slept it, the account changed, or the subdomain was renamed -- none of which
+# are caused by the commit being tested. Keeping it separate means the code CI
+# badge stays a statement about the code.
+#
+# No workflow input is interpolated into any shell command here; DEMO_URL is a
+# constant defined below, so there is no injection surface.
+on:
+  schedule:
+    - cron: "45 6 * * 1"   # Mondays 06:45 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      DEMO_URL: https://vlm-hallucination-eval.streamlit.app/
+    steps:
+      - name: Check the live demo responds
+        run: |
+          set -uo pipefail
+
+          # The cookie jar is load-bearing, not boilerplate. Streamlit Community
+          # Cloud answers an anonymous request with a 303 into its own auth
+          # handshake, and -L alone follows that redirect straight into another
+          # 303. Measured on a demo that was definitely up:
+          #     curl -s                 -> 303
+          #     curl -sL                -> 303
+          #     curl -sL -c jar -b jar  -> 200
+          # Without -c/-b this check fails every single run and reports a
+          # healthy app as dead.
+          jar="$(mktemp)"
+          for attempt in 1 2 3; do
+            code=$(curl -sL -c "$jar" -b "$jar" \
+                        --max-time 90 --retry 2 --retry-delay 5 \
+                        -o body.html -w '%{http_code}' "$DEMO_URL" || echo 000)
+            if [ "$code" = "200" ] && grep -qi 'streamlit' body.html; then
+              echo "OK: demo returned $code and served the app shell"
+              exit 0
+            fi
+            echo "attempt $attempt: status=$code (retrying in 20s)"
+            sleep 20
+          done
+
+          echo "::error::demo failed the link check (last status: $code)"
+          echo "--- first 400 bytes of the response ---"
+          head -c 400 body.html || true
+          exit 1
+
+      # What this can and cannot tell you: an app that Streamlit has put to
+      # sleep still answers 200 with the same shell, so this proves the URL is
+      # live and routed, not that the app booted without an exception. Catching
+      # that would need a websocket session, which is more machinery than a link
+      # check is worth.
+      - name: Note the limits of this check
+        if: always()
+        run: echo "Checked reachability only; app-level health is not asserted."
