@@ -18,9 +18,12 @@ import json
 import re
 import time
 
-from PIL import Image
+from . import config
 
-from . import config, models
+# `models` is imported lazily inside run(), not here. Everything else in this
+# module -- the COCO vocabulary, the synonym table, mention extraction, the
+# metrics -- is pure Python, and importing it should not require torch. That
+# keeps the eval-set integrity tests runnable (and CI fast) without model weights.
 
 # Synonyms mapping surface forms in captions back to COCO category names. Without
 # this, "sofa" in a caption never matches the "couch" annotation and the caption
@@ -93,6 +96,10 @@ def question_for(obj: str, style: str = "neutral") -> str:
 
 
 def run(limit: int | None = None, style: str = "neutral") -> dict:
+    from PIL import Image
+
+    from . import models
+
     rows = json.loads(config.EVAL_SET.read_text())[:limit]
     probes, captions = [], []
     t0 = time.time()
