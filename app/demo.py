@@ -26,6 +26,15 @@ def _z(img_bytes: bytes) -> dict[str, float]:
     return image_z_scores(Image.open(io.BytesIO(img_bytes)).convert("RGB"))
 
 
+@st.cache_data(show_spinner="Fetching image from COCO…")
+def _coco_image(file_name: str) -> bytes:
+    """Download one val2017 image. Cached, so each image is fetched once per run."""
+    import urllib.request
+    url = f"http://images.cocodataset.org/val2017/{file_name}"
+    with urllib.request.urlopen(url, timeout=30) as r:
+        return r.read()
+
+
 st.title("Does the model actually see what it says it sees?")
 st.caption(
     "BLIP writes the caption or answers the question; CLIP independently scores "
@@ -42,13 +51,26 @@ col_l, col_r = st.columns([1, 1])
 
 with col_l:
     up = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
-    samples = sorted(config.IMAGES.glob("*.jpg"))[:12] if config.IMAGES.exists() else []
+
+    # The evaluation images are COCO's, not mine, so they are not committed --
+    # which would leave a hosted demo with nothing to click. Fetch them from
+    # cocodataset.org on demand instead, and fall back to any local copy that
+    # `make data` has already produced.
+    eval_rows = json.loads(config.EVAL_SET.read_text()) if config.EVAL_SET.exists() else []
     pick = None
-    if samples:
-        names = ["(none)"] + [p.name for p in samples]
-        chosen = st.selectbox("…or use one from the evaluation set", names)
+    if eval_rows:
+        labels = {f"{r['file_name']} — {r['scene'][:52]}": r for r in eval_rows[:15]}
+        chosen = st.selectbox("…or use one from the adversarial evaluation set",
+                              ["(none)"] + list(labels))
         if chosen != "(none)":
-            pick = config.IMAGES / chosen
+            row = labels[chosen]
+            local = config.IMAGES / row["file_name"]
+            if local.exists():
+                pick = local
+            else:
+                pick = _coco_image(row["file_name"])
+            st.caption(f"**Why this one is hard:** {row['why_hard']}  \n"
+                       f"**Verified absent:** {', '.join(row['absent'])}")
 
     threshold = st.slider(
         "CLIP grounding threshold (z-score)", -1.5, 3.0, DEFAULT_THRESHOLD, 0.1,
@@ -57,12 +79,16 @@ with col_l:
     )
 
 src = None
+raw = None
 if up is not None:
-    src = Image.open(up).convert("RGB")
     raw = up.getvalue()
 elif pick is not None:
-    src = Image.open(pick).convert("RGB")
-    raw = pick.read_bytes()
+    # pick is a local Path when `make data` has run, raw bytes when the image
+    # was fetched from COCO.
+    raw = pick.read_bytes() if isinstance(pick, Path) else pick
+if raw is not None:
+    import io
+    src = Image.open(io.BytesIO(raw)).convert("RGB")
 
 if src is None:
     st.info("Upload an image or choose one from the evaluation set to begin.")
