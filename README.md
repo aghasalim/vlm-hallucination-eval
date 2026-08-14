@@ -4,6 +4,9 @@
 [![python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
+**[▶ Live demo](https://vlm-hallucination-eval.streamlit.app/)** — upload an image
+or pick one from the adversarial set, and see the per-claim grounding scores.
+
 A vision-language system that captions images and answers questions about them,
 with a CLIP-based layer that checks whether each claim is actually grounded in the
 image — and a hand-verified adversarial evaluation set built to catch it when it
