@@ -11,3 +11,5 @@ data/images/
 data/annotations/
 data/sheets/
 data/eval_set_draft.json
+.env
+.env.local
