@@ -19,7 +19,48 @@ the opposite, and I think the thing I found is more interesting.**
 
 ---
 
-## What I actually found
+
+---
+
+## Abstract
+
+Vision-language hallucination is usually reported as a single rate on a fixed
+benchmark. This work measures how much of that number is a property of the
+evaluation rather than the model, using object-presence probes over MS-COCO
+images with a hand-checked ground truth and three phrasings of the same question.
+
+Overall accuracy is nearly invariant to phrasing — 77.4%, 76.2%, 78.2% for
+neutral, presupposing and leading — while the hallucination rate on objects
+verified absent from the image more than doubles across the same three, from 6.0%
+to 13.4%. Smuggling the object into the premise is worth more than any model
+change measured here, and an accuracy headline conceals it entirely.
+
+A CLIP-based verifier is then added as a second opinion. It is worse than the VLM
+alone on accuracy, and the combination is worse still on recall — but it cuts the
+hallucination rate substantially, which is the only reason to pay for it. The
+trade-off curve is reported rather than a single operating point, because the
+right threshold depends on whether a miss or an invention costs more.
+
+**Contributions.** (i) A probe set with verified-absent objects, so hallucination
+is measured against ground truth rather than inferred. (ii) A phrasing ablation
+isolating prompt effects from model effects. (iii) A verification cascade reported
+as a trade-off curve, with what it costs stated alongside what it buys.
+
+---
+
+## 1. Findings
+
+![phrasing changes hallucination but not accuracy](reports/figures/prompt-styles.png)
+
+![the three decision rules](reports/figures/rules.png)
+
+![what verification costs](reports/figures/tradeoff.png)
+
+![where the errors are, per probe type](reports/figures/probe-breakdown.png)
+
+Under a neutral prompt the model rarely invents an object that is not there; what
+it does is miss objects that are. That asymmetry is why the verification cascade
+below trades recall for hallucination rate rather than the other way round.
 
 **1. The model barely hallucinates — it under-reports instead.**
 On 44 hand-verified adversarial probes, BLIP-VQA claimed to see an absent object
@@ -82,7 +123,7 @@ Full numbers, including the third phrasing and the whole curve: **[reports/resul
 
 ---
 
-## The evaluation set
+## 2. The evaluation set
 
 33 images, **172 objects verified present and 67 verified absent** (44 of them
 adversarial), so 239 yes/no probes. Mean 23 annotated object instances per image —
@@ -119,7 +160,7 @@ It also forced an honest admission about scope, below.
 
 ---
 
-## What this can't tell you
+## 3. Limitations
 
 - **The set is biased toward verifiable scenes.** Absence must be certain to serve
   as ground truth, and absence is hardest to certify in exactly the cluttered
@@ -137,7 +178,7 @@ It also forced an honest admission about scope, below.
 
 ---
 
-## Running it
+## 4. Running it
 
 ```bash
 make setup && make data && make evalset
@@ -163,7 +204,7 @@ docker build -t vlm-hallucination-eval . && docker run -p 8501:8501 vlm-hallucin
 
 ---
 
-## How it works
+## 5. Method
 
 **Generation** — `Salesforce/blip-vqa-base` answers, `blip-image-captioning-base`
 captions. Beam search, not sampling: a hallucination rate that changes between runs
@@ -198,7 +239,7 @@ src/vlmhall/
 
 ---
 
-## Licence
+## 6. Licence
 
 MIT — see [LICENSE](LICENSE). COCO images are not redistributed here; `make data`
 fetches them from cocodataset.org. `data/eval_set.json` contains only image ids and

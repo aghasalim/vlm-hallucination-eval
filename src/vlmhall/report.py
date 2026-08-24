@@ -37,6 +37,139 @@ def figure(ver: dict) -> None:
     print(f"  -> {out / 'tradeoff.png'}")
 
 
+def prompt_style_figure(styles: dict) -> None:
+    """What the wording of the question does to the answer.
+
+    The image never changes and neither do the objects; only the phrasing does.
+    Overall accuracy barely moves, which is why a headline accuracy number hides
+    this. The rate that moves is hallucination on objects verified absent from the
+    image, and smuggling the object into the premise more than doubles it.
+    """
+    order = [s for s in ["neutral", "presupposing", "leading"] if s in styles]
+    colors = {"neutral": "#1f77b4", "leading": "#d62728", "presupposing": "#ff7f0e"}
+    base = range(len(order))
+
+    fig, axes = plt.subplots(1, 3, figsize=(13, 4.2))
+
+    axes[0].bar(base,
+                [styles[s]["metrics"]["absent_all"]["hallucination_rate"] * 100
+                 for s in order],
+                color=[colors[s] for s in order], edgecolor="0.3", lw=0.5)
+    axes[0].set_ylabel("hallucination rate (%)")
+    axes[0].set_title("on objects verified absent", fontsize=10)
+    for index, style in enumerate(order):
+        rate = styles[style]["metrics"]["absent_all"]["hallucination_rate"] * 100
+        axes[0].text(index, rate + 0.3, f"{rate:.1f}%", ha="center", fontsize=10,
+                     fontweight="bold")
+
+    axes[1].bar(base, [styles[s]["metrics"]["overall"]["accuracy"] * 100 for s in order],
+                color=[colors[s] for s in order], edgecolor="0.3", lw=0.5)
+    axes[1].set_ylabel("overall accuracy (%)")
+    axes[1].set_ylim(0, 100)
+    axes[1].set_title("overall accuracy barely moves", fontsize=10)
+
+    axes[2].bar(base, [styles[s]["metrics"]["overall"]["yes_rate"] * 100 for s in order],
+                color=[colors[s] for s in order], edgecolor="0.3", lw=0.5)
+    axes[2].set_ylabel("yes-rate (%)")
+    axes[2].set_ylim(0, 100)
+    axes[2].set_title("and the yes-rate only a little", fontsize=10)
+
+    for ax in axes:
+        ax.set_xticks(list(base))
+        ax.set_xticklabels(order, fontsize=9)
+        ax.spines[["top", "right"]].set_visible(False)
+    fig.suptitle(
+        "Same images, same objects, three phrasings. Only the left panel moves, "
+        "which is why an accuracy headline misses it.",
+        fontsize=10, y=0.02, color="0.35",
+    )
+    fig.tight_layout(rect=(0, 0.06, 1, 1))
+    out = config.REPORTS / "figures" / "prompt-styles.png"
+    fig.savefig(out, dpi=140, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  -> {out}")
+
+
+def rules_figure(ver: dict) -> None:
+    """The three decision rules at the chosen operating point.
+
+    CLIP alone is worse than the VLM alone on accuracy. The combination beats both
+    on hallucination rate, which is the only reason to pay for it.
+    """
+    styles = list(ver["results"])
+    rules = ["baseline", "clip_only", "combined"]
+    present = [r for r in rules if r in ver["results"][styles[0]]]
+    labels = {"baseline": "VLM alone", "clip_only": "CLIP alone", "combined": "combined"}
+    colors = {"baseline": "#1f77b4", "clip_only": "#7f7f7f", "combined": "#2ca02c"}
+
+    fig, axes = plt.subplots(1, 2, figsize=(12.5, 4.4))
+    width = 0.8 / max(len(present), 1)
+    for offset, rule in enumerate(present):
+        xs = [i + (offset - (len(present) - 1) / 2) * width for i in range(len(styles))]
+        axes[0].bar(xs, [ver["results"][s][rule]["accuracy"] * 100 for s in styles],
+                    width, label=labels[rule], color=colors[rule],
+                    edgecolor="0.3", lw=0.4)
+        axes[1].bar(xs, [ver["results"][s][rule]["hallucination_rate"] * 100
+                         for s in styles],
+                    width, label=labels[rule], color=colors[rule],
+                    edgecolor="0.3", lw=0.4)
+    axes[0].set_ylabel("accuracy (%)")
+    axes[0].set_title("accuracy", fontsize=10)
+    axes[1].set_ylabel("hallucination rate (%)")
+    axes[1].set_title("hallucination on verified-absent objects", fontsize=10)
+    for ax in axes:
+        ax.set_xticks(range(len(styles)))
+        ax.set_xticklabels(styles, fontsize=9)
+        ax.legend(frameon=False, fontsize=8)
+        ax.spines[["top", "right"]].set_visible(False)
+    fig.tight_layout()
+    out = config.REPORTS / "figures" / "rules.png"
+    fig.savefig(out, dpi=140, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  -> {out}")
+
+
+def probe_breakdown_figure(baseline: dict) -> None:
+    """Where the errors are: present objects missed, absent objects invented.
+
+    The asymmetry is the finding. The model is close to perfect at not inventing
+    objects under a neutral prompt, and misses a third of the ones that are there.
+    """
+    probes = baseline["probes"]
+    kinds = list(dict.fromkeys(p["kind"] for p in probes))
+    correct, wrong = [], []
+    for kind in kinds:
+        subset = [p for p in probes if p["kind"] == kind]
+        right = sum(1 for p in subset if p["pred"] == p["truth"])
+        correct.append(right)
+        wrong.append(len(subset) - right)
+
+    fig, ax = plt.subplots(figsize=(8.5, 4.2))
+    base = range(len(kinds))
+    ax.bar(base, correct, 0.55, label="correct", color="#2ca02c",
+           edgecolor="0.3", lw=0.5)
+    ax.bar(base, wrong, 0.55, bottom=correct, label="wrong", color="#d62728",
+           edgecolor="0.3", lw=0.5)
+    for index, (right, bad) in enumerate(zip(correct, wrong, strict=True)):
+        total = right + bad
+        ax.text(index, total + 1, f"{bad}/{total} wrong", ha="center", fontsize=9)
+    ax.set_xticks(list(base))
+    ax.set_xticklabels(kinds, fontsize=9)
+    ax.set_ylabel("probes")
+    ax.set_title(
+        "Neutral prompt, per probe type. The model rarely invents an object; "
+        "it misses real ones.",
+        fontsize=10,
+    )
+    ax.legend(frameon=False, fontsize=9)
+    ax.spines[["top", "right"]].set_visible(False)
+    fig.tight_layout()
+    out = config.REPORTS / "figures" / "probe-breakdown.png"
+    fig.savefig(out, dpi=140, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  -> {out}")
+
+
 def main() -> None:
     base = json.loads((config.REPORTS / "baseline.json").read_text())
     styles = json.loads((config.REPORTS / "prompt_styles.json").read_text())
@@ -171,6 +304,9 @@ def main() -> None:
 
     (config.REPORTS / "results.md").write_text("\n".join(L) + "\n")
     figure(ver)
+    prompt_style_figure(styles)
+    rules_figure(ver)
+    probe_breakdown_figure(base)
     print(f"  -> {config.REPORTS / 'results.md'}")
 
 
