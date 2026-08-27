@@ -126,3 +126,14 @@ Full detail in [notes/METHODS.md](notes/METHODS.md#5-method).
 MIT, see [LICENSE](LICENSE). COCO images are not redistributed here;`make data`
 fetches them from cocodataset.org.`data/eval_set.json` contains only image ids and
 my own annotations.
+
+## References
+
+The papers and sources this implementation follows. Each one is here because
+the code uses the method, the dataset or the metric it describes.
+
+- **Rohrbach, Hendricks, Burns, Darrell, Saenko. Object Hallucination in Image Captioning. EMNLP 2018.** [arXiv:1809.02156](https://arxiv.org/abs/1809.02156) the CHAIR metric and the framing of object hallucination.
+- **Li, Du, Zhou, Wang, Zhao, Wen. Evaluating Object Hallucination in Large Vision-Language Models. EMNLP 2023.** [arXiv:2305.10355](https://arxiv.org/abs/2305.10355) POPE, the polling based evaluation.
+- **Radford, Kim, Hallacy et al. Learning Transferable Visual Models From Natural Language Supervision. ICML 2021.** [arXiv:2103.00020](https://arxiv.org/abs/2103.00020) CLIP.
+- **Li, Li, Xiong, Hoi. BLIP: Bootstrapping Language-Image Pre-training. ICML 2022.** [arXiv:2201.12086](https://arxiv.org/abs/2201.12086) BLIP.
+- **Liu, Li, Wu, Lee. Visual Instruction Tuning. NeurIPS 2023.** [arXiv:2304.08485](https://arxiv.org/abs/2304.08485) LLaVA.
