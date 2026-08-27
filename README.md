@@ -1,16 +1,16 @@
-# Hallucination-aware captioning — with an adversarial set I built by hand
+# Hallucination-aware captioning, with an adversarial set I built by hand
 
 [![ci](https://github.com/aghasalim/vlm-hallucination-eval/actions/workflows/ci.yml/badge.svg)](https://github.com/aghasalim/vlm-hallucination-eval/actions/workflows/ci.yml)
 [![demo-link](https://github.com/aghasalim/vlm-hallucination-eval/actions/workflows/demo.yml/badge.svg)](https://github.com/aghasalim/vlm-hallucination-eval/actions/workflows/demo.yml)
 [![python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-**[▶ Live demo](https://vlm-hallucination-eval.streamlit.app/)** — upload an image
+**[▶ Live demo](https://vlm-hallucination-eval.streamlit.app/)**: upload an image
 or pick one from the adversarial set, and see the per-claim grounding scores.
 
 A vision-language system that captions images and answers questions about them,
 with a CLIP-based layer that checks whether each claim is actually grounded in the
-image — and a hand-verified adversarial evaluation set built to catch it when it
+image, and a hand-verified adversarial evaluation set built to catch it when it
 isn't.
 
 I built this expecting to find a model that confidently describes things that
@@ -29,14 +29,14 @@ benchmark. This work measures how much of that number is a property of the
 evaluation rather than the model, using object-presence probes over MS-COCO
 images with a hand-checked ground truth and three phrasings of the same question.
 
-Overall accuracy is nearly invariant to phrasing — 77.4%, 76.2%, 78.2% for
-neutral, presupposing and leading — while the hallucination rate on objects
+Overall accuracy is nearly invariant to phrasing, 77.4%, 76.2%, 78.2% for
+neutral, presupposing and leading, while the hallucination rate on objects
 verified absent from the image more than doubles across the same three, from 6.0%
 to 13.4%. Smuggling the object into the premise is worth more than any model
 change measured here, and an accuracy headline conceals it entirely.
 
 A CLIP-based verifier is then added as a second opinion. It is worse than the VLM
-alone on accuracy, and the combination is worse still on recall — but it cuts the
+alone on accuracy, and the combination is worse still on recall, but it cuts the
 hallucination rate substantially, which is the only reason to pay for it. The
 trade-off curve is reported rather than a single operating point, because the
 right threshold depends on whether a miss or an invention costs more.
@@ -62,13 +62,13 @@ Under a neutral prompt the model rarely invents an object that is not there; wha
 it does is miss objects that are. That asymmetry is why the verification cascade
 below trades recall for hallucination rate rather than the other way round.
 
-**1. The model barely hallucinates — it under-reports instead.**
+**1. The model barely hallucinates, it under-reports instead.**
 On 44 hand-verified adversarial probes, BLIP-VQA claimed to see an absent object
 **4.5%** of the time. But it **missed 29% of the objects that were genuinely
 there**. It is over-cautious, not over-confident. Every fix I had planned was
 aimed at the wrong failure.
 
-**2. A caption that can't be wrong isn't grounded — it's just vague.**
+**2. A caption that can't be wrong isn't grounded, it's just vague.**
 Zero of 33 captions mentioned a verified-absent object. That sounds like a perfect
 score. It isn't. Shown a shelf holding thirty-odd pieces of ceramic, the model
 wrote *"a shelf filled with lots of different colored dishes"*. Shown a cluttered
@@ -76,7 +76,7 @@ living room: *"the floor is made of wood"*. **A 0% hallucination rate is not
 evidence of grounding** when the captions commit to nothing.
 
 **3. How you ask matters more than I expected.** Same model, same images, same
-objects — only the wording changes:
+objects, only the wording changes:
 
 | phrasing | example | hallucination rate |
 |---|---|---|
@@ -95,19 +95,19 @@ rate. Any published hallucination number is partly a property of the prompt.
 | neutral | **BLIP AND CLIP** | 0.676 | 0.798 | **4.8%** |
 | leading | BLIP alone | 0.784 | 0.857 | 11.9% |
 | leading | **BLIP AND CLIP** | 0.739 | 0.837 | **7.1%** |
-| — | CLIP alone | 0.928 | 0.841 | **73.8%** |
+|, | CLIP alone | 0.928 | 0.841 | **73.8%** |
 
-Verification cuts hallucination by 33–40% relative. It also costs recall, and **F1
-actually drops**. The rule is a logical AND, so it can only ever delete a "yes" —
+Verification cuts hallucination by 33 to 40% relative. It also costs recall, and **F1
+actually drops**. The rule is a logical AND, so it can only ever delete a "yes"
 on a model that already under-reports, it makes the bigger problem worse. I'd
 rather show that than quietly report only the number that improved.
 
-**CLIP on its own is a bad verifier** — 73.8% hallucination. CLIP is trained to
+**CLIP on its own is a bad verifier**: 73.8% hallucination. CLIP is trained to
 match images to plausible captions, not to certify that something is *missing*, and
 a photo of a pottery shelf is honestly a decent match for "a photo of a spoon". It
 only works as a veto on top of the VLM.
 
-You can push hallucination to **exactly zero** — it costs about 29 points of recall:
+You can push hallucination to **exactly zero**: it costs about 29 points of recall:
 
 | CLIP z threshold | hallucination | recall | F1 |
 |---|---|---|---|
@@ -126,7 +126,7 @@ Full numbers, including the third phrasing and the whole curve: **[reports/resul
 ## 2. The evaluation set
 
 33 images, **172 objects verified present and 67 verified absent** (44 of them
-adversarial), so 239 yes/no probes. Mean 23 annotated object instances per image —
+adversarial), so 239 yes/no probes. Mean 23 annotated object instances per image
 these are cluttered scenes, not stock photos.
 
 I selected candidates automatically from COCO val2017 by clutter, object smallness
@@ -144,7 +144,7 @@ probes whether the model distinguishes board sports. Probes are grouped by
 confusability, so a sheep pasture gets asked about horses and bears.
 
 **Ambiguous items were deleted, not guessed.** A playroom with a dog would have
-been a lovely "bear" probe — but COCO separates "bear" from "teddy bear", and a toy
+been a lovely "bear" probe, but COCO separates "bear" from "teddy bear", and a toy
 would make "yes" defensible. An eval item whose correct answer is arguable is worse
 than no eval item.
 
@@ -169,11 +169,11 @@ It also forced an honest admission about scope, below.
   the images I had to discard are the ones that would have hurt the model most.
 - **One model family.** BLIP is an encoder-decoder trained on VQA. The results that
   motivated this project mostly target LLaVA/MiniGPT-style models, where a language
-  prior can override the image. Do not read this as "VLMs don't hallucinate" — read
+  prior can override the image. Do not read this as "VLMs don't hallucinate", read
   it as "this one, on these images, does something different".
 - **Small numbers.** 153 probes over 22 held-out images, 42 of them verified-absent.
   4.8% is two errors. Single percentage points are noise.
-- The `popular` probe split has only 2 verified items and is reported for
+- The`popular` probe split has only 2 verified items and is reported for
   completeness only.
 
 ---
@@ -188,7 +188,7 @@ make setup && make data && make evalset
 make baseline && make verify && make report
 ```
 
-That reproduces every number above. No API key, no paid service — BLIP and CLIP run
+That reproduces every number above. No API key, no paid service, BLIP and CLIP run
 locally on CPU (or Apple MPS); the full evaluation is about 4 minutes on a laptop.
 
 ```bash
@@ -206,11 +206,11 @@ docker build -t vlm-hallucination-eval . && docker run -p 8501:8501 vlm-hallucin
 
 ## 5. Method
 
-**Generation** — `Salesforce/blip-vqa-base` answers, `blip-image-captioning-base`
+**Generation**:`Salesforce/blip-vqa-base` answers,`blip-image-captioning-base`
 captions. Beam search, not sampling: a hallucination rate that changes between runs
 isn't a measurement.
 
-**Verification** — raw CLIP similarity is useless as a truth test, because the
+**Verification**: raw CLIP similarity is useless as a truth test, because the
 scale isn't comparable across objects or images ("a photo of a person" scores well
 against nearly anything, and every score on a dim photo sits below every score on a
 bright one). So each object is scored **relative to the same image's own
@@ -218,11 +218,11 @@ distribution**: embed all 80 COCO prompts against the image, take the z-score of
 the object in question. That answers "how much does this image stand out for this
 object, versus everything else it could contain".
 
-**Calibration** — the threshold is fitted on 11 calibration images and reported on
+**Calibration**: the threshold is fitted on 11 calibration images and reported on
 22 held-out ones. The split is **by image, not by probe**: probes from one image
 share a CLIP score vector, so a probe-level split would leak.
 
-**Measurement** — probe-level scoring follows the POPE protocol (Li et al., EMNLP
+**Measurement**: probe-level scoring follows the POPE protocol (Li et al., EMNLP
 2023) so the numbers are comparable to published work, plus a CHAIR-style pass over
 free captions for what the model volunteers unprompted.
 
@@ -241,6 +241,6 @@ src/vlmhall/
 
 ## 6. Licence
 
-MIT — see [LICENSE](LICENSE). COCO images are not redistributed here; `make data`
-fetches them from cocodataset.org. `data/eval_set.json` contains only image ids and
+MIT, see [LICENSE](LICENSE). COCO images are not redistributed here;`make data`
+fetches them from cocodataset.org.`data/eval_set.json` contains only image ids and
 my own annotations.

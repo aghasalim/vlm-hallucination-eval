@@ -1,10 +1,10 @@
 # Results
 
-**33 hand-verified images**, 172 objects verified present and 67 verified absent (44 adversarial, 21 random, 2 popular) — 239 yes/no probes in total. Mean 23 annotated object instances per image.
+**33 hand-verified images**, 172 objects verified present and 67 verified absent (44 adversarial, 21 random, 2 popular), 239 yes/no probes in total. Mean 23 annotated object instances per image.
 
-Model: `Salesforce/blip-vqa-base` for answering, `Salesforce/blip-image-captioning-base` for captions, `openai/clip-vit-base-patch32` for verification. Beam search, so every number here is deterministic and reproducible.
+Model:`Salesforce/blip-vqa-base` for answering,`Salesforce/blip-image-captioning-base` for captions,`openai/clip-vit-base-patch32` for verification. Beam search, so every number here is deterministic and reproducible.
 
-## 1. Baseline — the surprise
+## 1. Baseline, the surprise
 
 | question phrasing | accuracy | yes-rate | recall on present | hallucination (adversarial) | hallucination (all absent) |
 |---|---|---|---|---|---|
@@ -12,13 +12,13 @@ Model: `Salesforce/blip-vqa-base` for answering, `Salesforce/blip-image-captioni
 | leading | 78.2% | 57.7% | 75.0% | 6.8% | 13.4% |
 | presupposing | 76.2% | 54.0% | 70.9% | 6.8% | 10.4% |
 
-The headline finding is not the one this project set out to measure. BLIP-VQA **barely hallucinates** on this set — 4.5% on adversarial probes with neutral phrasing. Its dominant error is the opposite: it **misses 29% of objects that are genuinely present**. It is over-cautious, not over-confident.
+The headline finding is not the one this project set out to measure. BLIP-VQA **barely hallucinates** on this set, 4.5% on adversarial probes with neutral phrasing. Its dominant error is the opposite: it **misses 29% of objects that are genuinely present**. It is over-cautious, not over-confident.
 
-The caption model makes the same trade even more starkly. Zero of 33 captions mentioned a verified-absent object — but only because the captions are too vague to be wrong. On a shelf of 30-odd ceramic pieces it produced *"a shelf filled with lots of different colored dishes"*; on a cluttered living room, *"the floor is made of wood"*. A caption that commits to nothing cannot hallucinate, and is also useless. A hallucination rate of 0% is not evidence of grounding.
+The caption model makes the same trade even more starkly. Zero of 33 captions mentioned a verified-absent object, but only because the captions are too vague to be wrong. On a shelf of 30-odd ceramic pieces it produced *"a shelf filled with lots of different colored dishes"*; on a cluttered living room, *"the floor is made of wood"*. A caption that commits to nothing cannot hallucinate, and is also useless. A hallucination rate of 0% is not evidence of grounding.
 
 ## 2. Phrasing more than doubles hallucination
 
-Same model, same images, same objects — only the wording of the question changes:
+Same model, same images, same objects, only the wording of the question changes:
 
 | phrasing | example | hallucination (all absent) |
 |---|---|---|
@@ -30,7 +30,7 @@ Smuggling the object into the premise more than doubles the hallucination rate. 
 
 ## 3. Verification: before and after
 
-CLIP z-score threshold fitted on 11 calibration images, reported on the 22 held-out images. The split is by image, not by probe — probes from one image share a CLIP score vector, so a probe-level split would leak.
+CLIP z-score threshold fitted on 11 calibration images, reported on the 22 held-out images. The split is by image, not by probe, probes from one image share a CLIP score vector, so a probe-level split would leak.
 
 | phrasing | rule | accuracy | precision | recall | F1 | hallucination |
 |---|---|---|---|---|---|---|
@@ -44,7 +44,7 @@ CLIP z-score threshold fitted on 11 calibration images, reported on the 22 held-
 | presupposing | CLIP alone | 74.5% | 0.769 | 0.928 | 0.841 | 73.8% |
 | presupposing | VLM AND CLIP | 75.2% | 0.962 | 0.685 | 0.800 | 7.1% |
 
-Verification cuts hallucination from 7.1% to 4.8% on neutral phrasing and from 11.9% to 7.1% on leading phrasing — a 33–40% relative reduction. **It is not free.** Recall falls from 0.721 to 0.676, and F1 actually *drops* (0.825 → 0.798). Because the rule is a logical AND it can only ever delete a "yes", so on a model that already under-reports, it makes the larger problem worse.
+Verification cuts hallucination from 7.1% to 4.8% on neutral phrasing and from 11.9% to 7.1% on leading phrasing, a 33 to 40% relative reduction. **It is not free.** Recall falls from 0.721 to 0.676, and F1 actually *drops* (0.825 → 0.798). Because the rule is a logical AND it can only ever delete a "yes", so on a model that already under-reports, it makes the larger problem worse.
 
 **CLIP alone is a bad verifier.** Thresholding CLIP on its own hallucinates on 73.8% of verified-absent objects. CLIP is trained to match images to plausible captions, not to certify that something is missing, and a photo of a pottery shelf is genuinely a decent match for "a photo of a spoon". It is only useful here as a veto on top of the VLM.
 
@@ -61,7 +61,7 @@ Verification cuts hallucination from 7.1% to 4.8% on neutral phrasing and from 1
 | 1.0 | 0.0% | 43.2% | 0.604 |
 | 1.5 | 0.0% | 31.5% | 0.479 |
 
-Hallucination can be driven to **exactly zero** — at a cost of roughly 29 points of recall. Whether that is a good trade is an application question, not a modelling one: it is the right call for generating radiology reports and the wrong one for alt-text.
+Hallucination can be driven to **exactly zero**: at a cost of roughly 29 points of recall. Whether that is a good trade is an application question, not a modelling one: it is the right call for generating radiology reports and the wrong one for alt-text.
 
 ## 4. What this measurement cannot tell you
 
