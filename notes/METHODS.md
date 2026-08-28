@@ -6,13 +6,13 @@ Long form detail moved out of the README.
 ## 1. Findings
 
 
-![phrasing changes hallucination but not accuracy](reports/figures/prompt-styles.png)
+![phrasing changes hallucination but not accuracy](../reports/figures/prompt-styles.png)
 
-![the three decision rules](reports/figures/rules.png)
+![the three decision rules](../reports/figures/rules.png)
 
-![what verification costs](reports/figures/tradeoff.png)
+![what verification costs](../reports/figures/tradeoff.png)
 
-![where the errors are, per probe type](reports/figures/probe-breakdown.png)
+![where the errors are, per probe type](../reports/figures/probe-breakdown.png)
 
 Under a neutral prompt the model rarely invents an object that is not there; what
 it does is miss objects that are. That asymmetry is why the verification cascade
