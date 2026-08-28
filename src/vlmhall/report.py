@@ -31,6 +31,28 @@ def _styles_in(payload: dict) -> list[str]:
     return [s for s in STYLE_ORDER if s in payload]
 
 
+def _flat_top(results: dict, styles: list[str]) -> tuple[float, float]:
+    """Where the F1 curves stop being flat, and how far they wander below there.
+
+    The best F1 is a tie across several neighbouring thresholds, not a point, so
+    the figure reports the flat run and how much it moves. Naming one argmax
+    would read as a peak the sweep cannot resolve.
+    """
+    tops, spans = [], []
+    for style in styles:
+        t = results[style]["tradeoff"]
+        zs = [r["threshold"] for r in t]
+        f1 = [r["f1"] for r in t]
+        top = max(z for z, v in zip(zs, f1, strict=True) if v == max(f1))
+        flat = [v for z, v in zip(zs, f1, strict=True) if z <= top]
+        after = [v for z, v in zip(zs, f1, strict=True) if z >= top]
+        assert all(b <= a for a, b in zip(after, after[1:])), (
+            f"{style} F1 rises again above z = {top}, so the title is wrong")
+        tops.append(top)
+        spans.append(max(flat) - min(flat))
+    return min(tops), max(spans)
+
+
 def figure(ver: dict) -> None:
     """The whole trade-off curve, because one operating point hides the cost."""
     fig, axes = plt.subplots(1, 2, figsize=(12.5, 4.6))
@@ -57,8 +79,10 @@ def figure(ver: dict) -> None:
     axes[1].axvline(threshold, color="#999999", lw=1.0, ls="--", zorder=0)
     axes[1].set_xlabel("CLIP z-score threshold (standard deviations)")
     axes[1].set_ylabel("F1 score (0 to 1)")
+    flat_top, flat_span = _flat_top(ver["results"], _styles_in(ver["results"]))
     titled(axes[1],
-           "F1 peaks near z = -0.9 and falls away fast after it",
+           f"F1 is flat within {flat_span:.3f} up to z = {flat_top:.1f}, "
+           "then only falls",
            f"dashed line is the threshold fitted on the "
            f"{len(ver['calibration_images'])} calibration images, z = {threshold:.1f}")
     axes[1].legend(loc="upper right")
