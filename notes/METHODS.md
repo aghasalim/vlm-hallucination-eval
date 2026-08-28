@@ -82,7 +82,7 @@ You can push hallucination to **exactly zero**: it costs about 29 points of reca
 Whether that's a good trade is an application question, not a modelling one. It's
 right for radiology reports and wrong for alt-text.
 
-Full numbers, including the third phrasing and the whole curve: **[reports/results.md](reports/results.md)**.
+Full numbers, including the third phrasing and the whole curve: **[reports/results.md](../reports/results.md)**.
 
 ---
 
