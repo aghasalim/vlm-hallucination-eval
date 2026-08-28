@@ -5,7 +5,7 @@ Two complementary measurements, because they fail differently:
 *Probe-level (POPE-style).* Ask "Is there a {object} in the image?" for objects
 verified present and objects verified absent. A "yes" on a verified-absent object
 is a hallucination. This isolates object existence from language fluency, and the
-yes-rate exposes the acquiescence bias that makes accuracy alone misleading -- a
+yes-rate exposes the acquiescence bias that makes accuracy alone misleading, a
 model that answers "yes" to everything scores 100% recall.
 
 *Caption-level (CHAIR-style).* Generate a free caption, extract the COCO objects
@@ -21,8 +21,8 @@ import time
 from . import config
 
 # `models` is imported lazily inside run(), not here. Everything else in this
-# module -- the COCO vocabulary, the synonym table, mention extraction, the
-# metrics -- is pure Python, and importing it should not require torch. That
+# module: the COCO vocabulary, the synonym table, mention extraction, the
+# metrics: is pure Python, and importing it should not require torch. That
 # keeps the eval-set integrity tests runnable (and CI fast) without model weights.
 
 # Synonyms mapping surface forms in captions back to COCO category names. Without

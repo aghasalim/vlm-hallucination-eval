@@ -59,7 +59,7 @@ with col_l:
     eval_rows = json.loads(config.EVAL_SET.read_text()) if config.EVAL_SET.exists() else []
     pick = None
     if eval_rows:
-        labels = {f"{r['file_name']} — {r['scene'][:52]}": r for r in eval_rows[:15]}
+        labels = {f"{r['file_name']}, {r['scene'][:52]}": r for r in eval_rows[:15]}
         chosen = st.selectbox("…or use one from the adversarial evaluation set",
                               ["(none)"] + list(labels))
         if chosen != "(none)":
@@ -118,10 +118,10 @@ with col_r:
             score = z.get(o, 0.0)
             ok = score >= threshold
             c1, c2 = st.columns([3, 2])
-            c1.markdown(f"{'✅' if ok else '⚠️'} **{o}** — CLIP z = `{score:+.2f}`")
+            c1.markdown(f"{'✅' if ok else '⚠️'} **{o}**, CLIP z = `{score:+.2f}`")
             c2.progress(min(max((score + 2) / 5, 0.0), 1.0))
             if not ok:
-                c1.caption("below threshold — treat as unsupported")
+                c1.caption("below threshold, treat as unsupported")
 
     st.divider()
     st.subheader("Ask about a specific object")

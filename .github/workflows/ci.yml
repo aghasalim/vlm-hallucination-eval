@@ -25,7 +25,7 @@ jobs:
       # These tests need no model weights and no COCO images, only the committed
       # data/eval_set.json. They are the ones that matter: they fail if a probe
       # drifts outside COCO's 80 categories, or if a probe is marked both present
-      # and absent -- either of which would silently corrupt every number in the
+      # and absent: either of which would silently corrupt every number in the
       # README. The image-existence test is skipped because `make data` has not
       # run on the runner.
       - name: Test evaluation set integrity

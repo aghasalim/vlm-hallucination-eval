@@ -27,7 +27,7 @@ def test_no_probe_is_both_present_and_absent(rows):
 
 def test_every_probe_is_a_real_coco_category(rows):
     """A probe outside COCO's 80 categories can never be verified against the
-    annotations -- this is what caught 'plate' during the build."""
+    annotations, this is what caught 'plate' during the build."""
     for r in rows:
         for obj in list(r["absent"]) + r["present"]:
             assert obj in COCO_80, f"{r['file_name']}: '{obj}' is not a COCO category"

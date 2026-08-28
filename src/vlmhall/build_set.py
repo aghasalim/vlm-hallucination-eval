@@ -23,7 +23,7 @@ from . import config
 
 
 def _iou(a: list[float], b: list[float]) -> float:
-    """IoU of two COCO [x, y, w, h] boxes -- used as an occlusion proxy."""
+    """IoU of two COCO [x, y, w, h] boxes, used as an occlusion proxy."""
     ax, ay, aw, ah = a
     bx, by, bw, bh = b
     x1, y1 = max(ax, bx), max(ay, by)

@@ -1,7 +1,7 @@
 name: demo-link
 
 # Deliberately NOT part of ci.yml. A demo goes down because Streamlit Cloud
-# slept it, the account changed, or the subdomain was renamed -- none of which
+# slept it, the account changed, or the subdomain was renamed: none of which
 # are caused by the commit being tested. Keeping it separate means the code CI
 # badge stays a statement about the code.
 #

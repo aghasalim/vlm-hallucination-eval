@@ -84,7 +84,7 @@ def apply(probes: list[dict], z: dict, threshold: float, files: set[str]) -> dic
     verified  - accept only if the VLM says yes AND CLIP agrees (logical AND)
 
     The AND rule can only ever remove "yes" answers, so it cannot invent new
-    hallucinations -- but it also cannot recover the objects the VLM missed, and
+    hallucinations, but it also cannot recover the objects the VLM missed, and
     it will destroy true positives that CLIP scores low. Both effects are
     reported, because a verifier that removes hallucinations by rejecting
     everything is worthless.
