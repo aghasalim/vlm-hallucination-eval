@@ -110,7 +110,7 @@ than no eval item.
 ## 5. Method
 
 
-**Generation**:`Salesforce/blip-vqa-base` answers,`blip-image-captioning-base`
+**Generation**: `Salesforce/blip-vqa-base` answers, `blip-image-captioning-base`
 captions. Beam search, not sampling: a hallucination rate that changes between runs
 isn't a measurement.
 

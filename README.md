@@ -91,7 +91,7 @@ It also forced an honest admission about scope, below.
   it as "this one, on these images, does something different".
 - **Small numbers.** 153 probes over 22 held-out images, 42 of them verified-absent.
   4.8% is two errors. Single percentage points are noise.
-- The`popular` probe split has only 2 verified items and is reported for
+- The `popular` probe split has only 2 verified items and is reported for
   completeness only.
 
 ---
@@ -128,8 +128,8 @@ Beam search, not sampling: a hallucination rate that changes between runs isn't 
 Full detail in [notes/METHODS.md](notes/METHODS.md#5-method).
 ## 6. Licence
 
-MIT, see [LICENSE](LICENSE). COCO images are not redistributed here;`make data`
-fetches them from cocodataset.org.`data/eval_set.json` contains only image ids and
+MIT, see [LICENSE](LICENSE). COCO images are not redistributed here; `make data`
+fetches them from cocodataset.org. `data/eval_set.json` contains only image ids and
 my own annotations.
 
 ## References
