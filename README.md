@@ -37,7 +37,10 @@ change measured here, and an accuracy headline conceals it entirely.
 
 A CLIP-based verifier is then added as a second opinion. It is worse than the VLM
 alone on accuracy, and the combination is worse still on recall, but it cuts the
-hallucination rate substantially, which is the only reason to pay for it. The
+hallucination rate by 25 to 40% relative, 25% on presupposing phrasing, 33% on
+neutral and 40% on leading, which is the only reason to pay for it. That whole
+range is 1 to 2 fewer false positives out of 42 verified-absent probes, so the
+range is the result rather than the best number in it. The
 trade-off curve is reported rather than a single operating point, because the
 right threshold depends on whether a miss or an invention costs more.
 

@@ -393,12 +393,22 @@ def main() -> None:
 
     n = ver["results"]["neutral"]
     lead = ver["results"]["leading"]
+    # Every phrasing, not the two that flatter the method. Computed here so the
+    # sentence cannot drift away from the JSON.
+    rel = {s: 1 - r["verified"]["hallucination_rate"] / r["baseline"]["hallucination_rate"]
+           for s, r in ver["results"].items()}
+    rel_txt = ", ".join(f"{s} {rel[s]:.0%}" for s in _styles_in(rel))
+    saved = sorted(r["baseline"]["fp"] - r["verified"]["fp"] for r in ver["results"].values())
+    absent_n = n["baseline"]["fp"] + n["baseline"]["tn"]
     L += [
         "",
         f"Verification cuts hallucination from {n['baseline']['hallucination_rate']:.1%} to "
         f"{n['verified']['hallucination_rate']:.1%} on neutral phrasing and from "
         f"{lead['baseline']['hallucination_rate']:.1%} to {lead['verified']['hallucination_rate']:.1%} "
-        "on leading phrasing, a 33 to 40% relative reduction. **It is not free.** Recall "
+        f"on leading phrasing. The relative reduction is {rel_txt}, so the honest range is "
+        f"{min(rel.values()):.0%} to {max(rel.values()):.0%} and it depends on the phrasing. "
+        f"In counts that is {saved[0]} to {saved[-1]} fewer false positives out of "
+        f"{absent_n} verified-absent probes. **It is not free.** Recall "
         f"falls from {n['baseline']['recall']:.3f} to {n['verified']['recall']:.3f}, and "
         f"F1 actually *drops* ({n['baseline']['f1']:.3f} → {n['verified']['f1']:.3f}). "
         "Because the rule is a logical AND it can only ever delete a \"yes\", so on a "

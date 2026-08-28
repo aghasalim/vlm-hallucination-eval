@@ -2,7 +2,7 @@
 
 **33 hand-verified images**, 172 objects verified present and 67 verified absent (44 adversarial, 21 random, 2 popular), 239 yes/no probes in total. Mean 23 annotated object instances per image.
 
-Model:`Salesforce/blip-vqa-base` for answering,`Salesforce/blip-image-captioning-base` for captions,`openai/clip-vit-base-patch32` for verification. Beam search, so every number here is deterministic and reproducible.
+Model: `Salesforce/blip-vqa-base` for answering, `Salesforce/blip-image-captioning-base` for captions, `openai/clip-vit-base-patch32` for verification. Beam search, so every number here is deterministic and reproducible.
 
 ## 1. Baseline, the surprise
 
@@ -44,7 +44,7 @@ CLIP z-score threshold fitted on 11 calibration images, reported on the 22 held-
 | presupposing | CLIP alone | 74.5% | 0.769 | 0.928 | 0.841 | 73.8% |
 | presupposing | VLM AND CLIP | 75.2% | 0.962 | 0.685 | 0.800 | 7.1% |
 
-Verification cuts hallucination from 7.1% to 4.8% on neutral phrasing and from 11.9% to 7.1% on leading phrasing, a 33 to 40% relative reduction. **It is not free.** Recall falls from 0.721 to 0.676, and F1 actually *drops* (0.825 → 0.798). Because the rule is a logical AND it can only ever delete a "yes", so on a model that already under-reports, it makes the larger problem worse.
+Verification cuts hallucination from 7.1% to 4.8% on neutral phrasing and from 11.9% to 7.1% on leading phrasing. The relative reduction is neutral 33%, presupposing 25%, leading 40%, so the honest range is 25% to 40% and it depends on the phrasing. In counts that is 1 to 2 fewer false positives out of 42 verified-absent probes. **It is not free.** Recall falls from 0.721 to 0.676, and F1 actually *drops* (0.825 → 0.798). Because the rule is a logical AND it can only ever delete a "yes", so on a model that already under-reports, it makes the larger problem worse.
 
 **CLIP alone is a bad verifier.** Thresholding CLIP on its own hallucinates on 73.8% of verified-absent objects. CLIP is trained to match images to plausible captions, not to certify that something is missing, and a photo of a pottery shelf is genuinely a decent match for "a photo of a spoon". It is only useful here as a veto on top of the VLM.
 
@@ -61,7 +61,7 @@ Verification cuts hallucination from 7.1% to 4.8% on neutral phrasing and from 1
 | 1.0 | 0.0% | 43.2% | 0.604 |
 | 1.5 | 0.0% | 31.5% | 0.479 |
 
-Hallucination can be driven to **exactly zero**: at a cost of roughly 29 points of recall. Whether that is a good trade is an application question, not a modelling one: it is the right call for generating radiology reports and the wrong one for alt-text.
+Hallucination can be driven to **exactly zero**, at a cost of roughly 29 points of recall. Whether that is a good trade is an application question, not a modelling one: it is the right call for generating radiology reports and the wrong one for alt-text.
 
 ## 4. What this measurement cannot tell you
 

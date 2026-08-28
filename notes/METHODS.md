@@ -49,12 +49,19 @@ rate. Any published hallucination number is partly a property of the prompt.
 |---|---|---|---|---|
 | neutral | BLIP alone | 0.721 | 0.825 | 7.1% |
 | neutral | **BLIP AND CLIP** | 0.676 | 0.798 | **4.8%** |
+| presupposing | BLIP alone | 0.730 | 0.827 | 9.5% |
+| presupposing | **BLIP AND CLIP** | 0.685 | 0.800 | **7.1%** |
 | leading | BLIP alone | 0.784 | 0.857 | 11.9% |
 | leading | **BLIP AND CLIP** | 0.739 | 0.837 | **7.1%** |
-|, | CLIP alone | 0.928 | 0.841 | **73.8%** |
+| any | CLIP alone | 0.928 | 0.841 | **73.8%** |
 
-Verification cuts hallucination by 33 to 40% relative. It also costs recall, and **F1
-actually drops**. The rule is a logical AND, so it can only ever delete a "yes"
+Verification cuts hallucination by **25 to 40% relative**, and which end you get
+depends on the phrasing: 25% presupposing, 33% neutral, 40% leading. Quoting the
+33 and the 40 and leaving out the 25 would be picking the two phrasings that
+flatter the method. In counts the whole range is 1 to 2 fewer false positives out
+of 42 verified-absent probes, which is small enough that the range is the result,
+not any single number in it. It also costs recall, and **F1 actually drops**.
+The rule is a logical AND, so it can only ever delete a "yes"
 on a model that already under-reports, it makes the bigger problem worse. I'd
 rather show that than quietly report only the number that improved.
 
