@@ -54,6 +54,11 @@ Under a neutral prompt the model rarely invents an object that is not there; wha
 ![phrasing changes hallucination but not accuracy](reports/figures/prompt-styles.png)
 ![the three decision rules](reports/figures/rules.png)
 ![what verification costs](reports/figures/tradeoff.png)
+
+![the same trade-off, one threshold at a time](reports/figures/threshold-sweep.gif)
+
+*Only the CLIP z-score threshold moves; the model, the held-out probes and the neutral phrasing are the same in every frame, so the recall you watch drain away is what the lower hallucination rate costs.*
+
 ![where the errors are, per probe type](reports/figures/probe-breakdown.png)
 
 Full detail in [notes/METHODS.md](notes/METHODS.md#1-findings).
