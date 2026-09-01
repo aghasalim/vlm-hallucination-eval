@@ -1,0 +1,10 @@
+[package]
+name = "sweep"
+version = "0.1.0"
+edition = "2021"
+
+# No dependencies on purpose. This is a second opinion on the Python, so it
+# should not pull in a third party's idea of what a JSON number is either.
+
+[profile.release]
+opt-level = 3

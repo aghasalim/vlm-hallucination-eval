@@ -30,3 +30,37 @@ jobs:
       # run on the runner.
       - name: Test evaluation set integrity
         run: python -m pytest tests/ -q -k "not images_exist"
+
+  # Every figure in reports/ comes out of one Python path, and the tests check
+  # that the path runs rather than that the metrics are right. On an eval set
+  # this small a counting error moves a headline several points and still looks
+  # reasonable. These rederive the numbers from the per-probe records.
+  cross-language:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install R if the image does not carry it
+        run: |
+          command -v Rscript >/dev/null || {
+            sudo apt-get update
+            sudo apt-get install -y --no-install-recommends r-base-core
+          }
+
+      - name: Rederive the published numbers in every language
+        run: ./verify/verify.sh
+
+      # A check that cannot fail is not evidence.
+      - name: The harness rejects a corrupted results file
+        run: |
+          sed -i "s/roughly 22 points of recall/roughly 25 points of recall/" reports/results.md
+          if ./verify/verify.sh > /tmp/corrupt.log 2>&1; then
+            echo "the harness passed on a corrupted results.md"
+            tail -30 /tmp/corrupt.log
+            git checkout -- reports/results.md
+            exit 1
+          fi
+          echo "rejected the corrupted claim, as it should"
+          git checkout -- reports/results.md
+          ./verify/verify.sh > /dev/null
+

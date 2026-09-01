@@ -70,13 +70,14 @@ match images to plausible captions, not to certify that something is *missing*, 
 a photo of a pottery shelf is honestly a decent match for "a photo of a spoon". It
 only works as a veto on top of the VLM.
 
-You can push hallucination to **exactly zero**: it costs about 29 points of recall:
+You can push hallucination to **exactly zero**: it costs about 22 points of recall:
 
 | CLIP z threshold | hallucination | recall | F1 |
 |---|---|---|---|
 | −1.5 (off) | 7.1% | 72.1% | 0.825 |
 | −0.4 (fitted) | 4.8% | 67.6% | 0.798 |
 | 0.5 | 2.4% | 55.9% | 0.713 |
+| 0.8 (first zero) | **0.0%** | 50.5% | 0.671 |
 | 1.0 | **0.0%** | 43.2% | 0.604 |
 
 Whether that's a good trade is an application question, not a modelling one. It's

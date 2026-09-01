@@ -135,6 +135,41 @@ MIT, see [LICENSE](LICENSE). COCO images are not redistributed here; `make data`
 fetches them from cocodataset.org. `data/eval_set.json` contains only image ids and
 my own annotations.
 
+## Every published number is derived twice
+
+Everything in `reports/` comes out of one Python path, and the tests check that
+the path runs rather than that the metrics are right. On an eval set of 33
+images a miscount moves a headline by several points and still looks entirely
+reasonable, which is the failure this is guarding against.
+
+Seven implementations rederive the published numbers from the per-probe records,
+and CI fails if any disagrees.
+
+| implementation | what it rederives |
+| --- | --- |
+| [`verify/metrics.sql`](verify/metrics.sql) | the per-probe aggregation, 189 published figures |
+| [`verify/cascade.c`](verify/cascade.c) | the verification cascade and its false-positive counts, 90 figures |
+| [`verify/gocheck`](verify/gocheck) | that the calibration and held-out splits are disjoint and cover the set, and every probe matches the eval set |
+| [`verify/calibrate.R`](verify/calibrate.R) | the refitted threshold and a bootstrap on the reduction |
+| [`verify/docs_check.rb`](verify/docs_check.rb) | every figure quoted in the prose against the data, 169 figures |
+| [`verify/captions.js`](verify/captions.js) | captions re-extracted and checked against the verified-absent labels, 99 lists |
+| [`verify/sweep`](verify/sweep) | the whole threshold sweep, 691 figures |
+
+Run them with [`./verify/verify.sh`](verify/verify.sh). Each is skipped with a
+message if its toolchain is absent.
+
+**It found a real error.** The prose said hallucination can be driven to exactly
+zero "at a cost of roughly 29 points of recall". That figure came from the
+z = 1.0 row of the sweep, but hallucination first reaches exactly zero at
+z = 0.8, which costs 21.6 points, not 29. The table in
+[notes/METHODS.md](notes/METHODS.md) jumped from 0.5 to 1.0 and skipped the row
+where zero actually starts, so the trade looked worse than it is. Both documents
+now say 22 points and the table carries the 0.8 row.
+
+Changing one swept recall in `reports/verification.json` is rejected by the Go,
+the Ruby and the Rust. Changing only the prose, with every data file untouched,
+is rejected by the Ruby alone. CI does this to itself on every run.
+
 ## References
 
 The papers and sources this implementation follows. Each one is here because

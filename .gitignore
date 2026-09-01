@@ -13,3 +13,7 @@ data/sheets/
 data/eval_set_draft.json
 .env
 .env.local
+
+# Cross-language verification build products. Sources under verify/ are tracked.
+verify/sweep/target/
+verify/gocheck/gocheck

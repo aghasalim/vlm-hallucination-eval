@@ -61,7 +61,7 @@ Verification cuts hallucination from 7.1% to 4.8% on neutral phrasing and from 1
 | 1.0 | 0.0% | 43.2% | 0.604 |
 | 1.5 | 0.0% | 31.5% | 0.479 |
 
-Hallucination can be driven to **exactly zero**, at a cost of roughly 29 points of recall. Whether that is a good trade is an application question, not a modelling one: it is the right call for generating radiology reports and the wrong one for alt-text.
+Hallucination can be driven to **exactly zero**, at a cost of roughly 22 points of recall. Whether that is a good trade is an application question, not a modelling one: it is the right call for generating radiology reports and the wrong one for alt-text.
 
 ## 4. What this measurement cannot tell you
 
