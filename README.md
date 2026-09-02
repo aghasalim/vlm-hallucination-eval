@@ -65,6 +65,16 @@ Under a neutral prompt the model rarely invents an object that is not there; wha
 ![where the errors are, per probe type](reports/figures/probe-breakdown.png)
 
 Full detail in [notes/METHODS.md](notes/METHODS.md#1-findings).
+
+### A corrected figure
+
+The prose used to say hallucination can be driven to exactly zero "at a cost of
+roughly 29 points of recall". That figure came from the z = 1.0 row of the
+sweep, but hallucination first reaches exactly zero at z = 0.8, which costs 21.6
+points, not 29. The table in [notes/METHODS.md](notes/METHODS.md) jumped from
+0.5 to 1.0 and skipped the row where zero actually starts, so the trade looked
+worse than it is. Both documents now say 22 points and the table carries the 0.8
+row.
 ## 2. The evaluation set
 33 images, **172 objects verified present and 67 verified absent** (44 of them adversarial), so 239 yes/no probes.
 
