@@ -64,7 +64,7 @@ Under a neutral prompt the model rarely invents an object that is not there; wha
 
 ![where the errors are, per probe type](reports/figures/probe-breakdown.png)
 
-Full detail in [notes/METHODS.md](notes/METHODS.md#1-findings).
+Detail in [notes/METHODS.md](notes/METHODS.md#1-findings).
 
 ### A corrected figure
 
@@ -78,7 +78,7 @@ row.
 ## 2. The evaluation set
 33 images, **172 objects verified present and 67 verified absent** (44 of them adversarial), so 239 yes/no probes.
 
-Full detail in [notes/METHODS.md](notes/METHODS.md#2-the-evaluation-set).
+Detail in [notes/METHODS.md](notes/METHODS.md#2-the-evaluation-set).
 ### Two things this caught
 
 Building it by hand caught a bug that would have silently corrupted every number:
@@ -140,7 +140,8 @@ docker build -t vlm-hallucination-eval . && docker run -p 8501:8501 vlm-hallucin
 ## 5. Method
 Beam search, not sampling: a hallucination rate that changes between runs isn't a measurement.
 
-Full detail in [notes/METHODS.md](notes/METHODS.md#5-method).
+Detail in [notes/METHODS.md](notes/METHODS.md#5-method).
+
 ## 6. Licence
 
 MIT, see [LICENSE](LICENSE). COCO images are not redistributed here; `make data`
@@ -149,8 +150,7 @@ my own annotations.
 
 ## References
 
-The papers and sources this implementation follows. Each one is here because
-the code uses the method, the dataset or the metric it describes.
+Where the metric, the probe design and the three models come from.
 
 - **Rohrbach, Hendricks, Burns, Darrell, Saenko. Object Hallucination in Image Captioning. EMNLP 2018.** [arXiv:1809.02156](https://arxiv.org/abs/1809.02156) the CHAIR metric and the framing of object hallucination.
 - **Li, Du, Zhou, Wang, Zhao, Wen. Evaluating Object Hallucination in Large Vision-Language Models. EMNLP 2023.** [arXiv:2305.10355](https://arxiv.org/abs/2305.10355) POPE, the polling based evaluation.
