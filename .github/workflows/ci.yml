@@ -50,7 +50,7 @@ jobs:
       - name: Rederive the published numbers in every language
         run: ./verify/verify.sh
 
-      # A check that cannot fail is not evidence.
+      # A check that cannot fail is not a check.
       - name: The harness rejects a corrupted results file
         run: |
           sed -i "s/roughly 22 points of recall/roughly 25 points of recall/" reports/results.md
