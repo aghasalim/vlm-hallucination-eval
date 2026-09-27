@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: If you use this work, please cite it as below.
+title: "Hallucination-aware captioning, with an adversarial set I built by hand"
+abstract: "Vision-language hallucination measured against a hand-verified adversarial set. BLIP hallucinates 4.5% but misses 29% of present objects; CLIP verification cuts hallucination 33-40% at a real cost in recall."
+type: software
+authors:
+  - family-names: Mustafazada
+    given-names: Aghasalim
+    orcid: "https://orcid.org/0009-0001-8746-4582"
+    affiliation: "Howest University of Applied Sciences"
+repository-code: "https://github.com/aghasalim/vlm-hallucination-eval"
+url: "https://aghasalim.github.io/"
+license: MIT
+keywords:
+  - blip
+  - clip
+  - hallucination detection
+  - machine learning
+  - model evaluation
+  - multimodal
+  - vision language
