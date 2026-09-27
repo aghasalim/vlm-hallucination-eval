@@ -26,7 +26,7 @@ the opposite, and I think the thing I found is more interesting.**
 
 Vision-language hallucination is usually reported as a single rate on a fixed
 benchmark. This work measures how much of that number is a property of the
-evaluation rather than the model, using object-presence probes over MS-COCO
+evaluation instead of the model, using object-presence probes over MS-COCO
 images with a hand-checked ground truth and three phrasings of the same question.
 
 Overall accuracy is nearly invariant to phrasing, 77.4%, 76.2%, 78.2% for
@@ -40,12 +40,12 @@ alone on accuracy, and the combination is worse still on recall, but it cuts the
 hallucination rate by 25 to 40% relative, 25% on presupposing phrasing, 33% on
 neutral and 40% on leading, which is the only reason to pay for it. That whole
 range is 1 to 2 fewer false positives out of 42 verified-absent probes, so the
-range is the result rather than the best number in it. The
-trade-off curve is reported rather than a single operating point, because the
+range is the result instead of the best number in it. The
+trade-off curve is reported instead of a single operating point, because the
 right threshold depends on whether a miss or an invention costs more.
 
-**Contributions.** (i) A probe set with verified-absent objects, so hallucination
-is measured against ground truth rather than inferred. (ii) A phrasing ablation
+Contributions. (i) A probe set with verified-absent objects, so hallucination
+is measured against ground truth instead of inferred. (ii) A phrasing ablation
 isolating prompt effects from model effects. (iii) A verification cascade reported
 as a trade-off curve, with what it costs stated alongside what it buys.
 
@@ -84,10 +84,10 @@ Detail in [notes/METHODS.md](notes/METHODS.md#2-the-evaluation-set).
 Building it by hand caught a bug that would have silently corrupted every number:
 **"plate" is not one of COCO's 80 categories.** My confusable-object taxonomy
 listed it, so every image would have looked as though it had no plate, and I'd have
-been measuring COCO's label vocabulary rather than hallucination. There is now
+been measuring COCO's label vocabulary instead of hallucination. There is now
 [a test](tests/test_eval_set.py) that fails if any probe drifts outside the 80.
 
-It also forced an honest admission about scope, below.
+It also forced an admission about scope, below.
 
 ---
 
