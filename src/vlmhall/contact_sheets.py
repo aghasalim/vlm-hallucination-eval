@@ -30,7 +30,7 @@ def download() -> list[dict]:
     return rows
 
 
-def _font(size: int):
+def _font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
     for p in ("/System/Library/Fonts/Supplemental/Arial.ttf",
               "/System/Library/Fonts/Helvetica.ttc"):
         if Path(p).exists():
