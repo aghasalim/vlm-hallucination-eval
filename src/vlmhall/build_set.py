@@ -17,7 +17,6 @@ from __future__ import annotations
 import json
 import random
 from collections import Counter, defaultdict
-from pathlib import Path
 
 from . import config
 
