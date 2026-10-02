@@ -52,6 +52,7 @@ def test_set_is_large_enough_and_mostly_adversarial(rows):
     assert n_adv / n_absent > 0.5, "the set should be mostly confusable probes"
 
 
+@pytest.mark.skipif(not config.IMAGES.exists(), reason="run `make data` to fetch the COCO images")
 def test_images_exist(rows):
     for r in rows:
         assert (config.IMAGES / r["file_name"]).exists(), f"missing {r['file_name']}"
