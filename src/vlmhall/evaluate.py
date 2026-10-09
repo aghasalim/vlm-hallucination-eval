@@ -41,7 +41,7 @@ SYNONYMS: dict[str, str] = {
     "man": "person", "woman": "person", "boy": "person", "girl": "person",
     "child": "person", "people": "person", "men": "person", "women": "person",
     "player": "person", "skier": "person", "surfer": "person", "rider": "person",
-    "glass": "wine glass", "mug": "cup", "plant": "potted plant",
+    "mug": "cup", "plant": "potted plant",
     "fridge": "refrigerator", "stove": "oven", "computer": "laptop",
     "remote control": "remote", "purse": "handbag", "bag": "handbag",
     "luggage": "suitcase", "racket": "tennis racket", "bat": "baseball bat",
@@ -65,16 +65,38 @@ COCO_80 = [
 ]
 
 
+# Longest surface form first, so "hot dog" and "teddy bear" claim their words
+# before "dog" and "bear" can.
+_FORMS = sorted(list(SYNONYMS.items()) + [(c, c) for c in COCO_80],
+                key=lambda f: -len(f[0]))
+
+# "orange" is also a colour. Singular "orange" followed by another word is read
+# as the adjective ("an orange shirt"), unless that word is one of these.
+# ponytail: a word list, not a parser; a POS tagger if captions get richer.
+_AFTER_FRUIT = {"and", "or", "on", "in", "with", "next", "near", "by", "at",
+                "of", "is", "are", "sitting", "lying", "slice", "slices"}
+
+
 def mentioned_objects(text: str) -> set[str]:
     """COCO categories a caption mentions, after synonym normalisation."""
     t = " " + re.sub(r"[^a-z ]", " ", text.lower()) + " "
     t = re.sub(r"\s+", " ", t)
     found = set()
-    for surface, canon in list(SYNONYMS.items()) + [(c, c) for c in COCO_80]:
+    for surface, canon in _FORMS:
         # Word-boundary match plus a naive plural, so "dogs" counts as "dog"
         # but "hotdog" does not count as "dog".
-        if re.search(rf" {re.escape(surface)}(s|es)? ", t):
+        rx = rf"(?<= ){re.escape(surface)}(s|es)?(?= )"
+        if surface == "orange":
+            hits = [m for m in re.finditer(rx + r" ?(\w*)", t)
+                    if m.group(1) or m.group(2) in _AFTER_FRUIT | {""}]
+        else:
+            hits = list(re.finditer(rx, t))
+        if hits:
             found.add(canon)
+            # Blank the matched words so a shorter form cannot match inside them.
+            for m in hits:
+                end = m.start() + len(surface) + len(m.group(1) or "")
+                t = t[:m.start()] + " " * (end - m.start()) + t[end:]
     return found
 
 
