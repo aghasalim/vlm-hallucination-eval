@@ -2120,7 +2120,6 @@
       "file_name": "000000083531.jpg",
       "caption": "hot dogs on a grill",
       "mentioned": [
-        "dog",
         "hot dog"
       ],
       "grounded": [
@@ -2248,12 +2247,10 @@
       "file_name": "000000572678.jpg",
       "caption": "a glass dining table",
       "mentioned": [
-        "dining table",
-        "wine glass"
+        "dining table"
       ],
       "grounded": [
-        "dining table",
-        "wine glass"
+        "dining table"
       ],
       "hallucinated": []
     },

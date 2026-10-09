@@ -63,9 +63,18 @@ def test_images_exist(rows):
     ("two dogs playing in a field", {"dog"}),
     ("a sofa next to a television", {"couch", "tv"}),
     ("a plate of hotdogs", {"hot dog"}),
+    ("a hot dog on a plate", {"hot dog"}),
+    ("a teddy bear on a bed", {"teddy bear", "bed"}),
+    ("a woman wearing glasses", {"person"}),
+    ("two wine glasses on a table", {"wine glass", "dining table"}),
+    ("a man in an orange shirt", {"person"}),
+    ("an orange and a banana", {"orange", "banana"}),
+    ("a bowl of oranges", {"bowl", "orange"}),
+    ("a dog next to a hot dog", {"dog", "hot dog"}),
 ])
 def test_mention_extraction(caption, expected):
-    assert expected <= mentioned_objects(caption)
+    # Equality, not subset: a spurious extra mention is a false hallucination.
+    assert mentioned_objects(caption) == expected
 
 
 def test_hotdog_does_not_match_dog():

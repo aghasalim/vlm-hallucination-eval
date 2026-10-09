@@ -52,7 +52,7 @@ const SYNONYMS = {
   man: "person", woman: "person", boy: "person", girl: "person",
   child: "person", people: "person", men: "person", women: "person",
   player: "person", skier: "person", surfer: "person", rider: "person",
-  glass: "wine glass", mug: "cup", plant: "potted plant",
+  mug: "cup", plant: "potted plant",
   fridge: "refrigerator", stove: "oven", computer: "laptop",
   "remote control": "remote", purse: "handbag", bag: "handbag",
   luggage: "suitcase", racket: "tennis racket", bat: "baseball bat",
@@ -69,13 +69,29 @@ for (const canon of Object.values(SYNONYMS)) {
 
 const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
+// Longest surface form first, and matched words are blanked, so "hot dog" and
+// "teddy bear" do not also count as "dog" and "bear".
+const PAIRS = Object.entries(SYNONYMS)
+  .concat(COCO.map((c) => [c, c]))
+  .sort((a, b) => b[0].length - a[0].length);
+// Singular "orange" followed by another word is the colour, unless the word is
+// one of these.
+const AFTER_FRUIT = new Set(["", "and", "or", "on", "in", "with", "next", "near",
+  "by", "at", "of", "is", "are", "sitting", "lying", "slice", "slices"]);
+
 function mentionedObjects(text) {
   let t = " " + text.toLowerCase().replace(/[^a-z ]/g, " ") + " ";
   t = t.replace(/\s+/g, " ");
   const found = new Set();
-  const pairs = Object.entries(SYNONYMS).concat(COCO.map((c) => [c, c]));
-  for (const [surface, canon] of pairs) {
-    if (new RegExp(` ${escape(surface)}(s|es)? `).test(t)) found.add(canon);
+  for (const [surface, canon] of PAIRS) {
+    const rx = new RegExp(`(?<= )${escape(surface)}(s|es)?(?= ) ?([a-z]*)`, "g");
+    const spans = [];
+    for (const m of t.matchAll(rx)) {
+      if (surface === "orange" && !m[1] && !AFTER_FRUIT.has(m[2])) continue;
+      spans.push([m.index, m.index + surface.length + (m[1] || "").length]);
+    }
+    if (spans.length) found.add(canon);
+    for (const [a, b] of spans) t = t.slice(0, a) + " ".repeat(b - a) + t.slice(b);
   }
   return found;
 }
@@ -140,6 +156,11 @@ const rules = [
   ["a man riding a motorbike", ["motorcycle", "person"]],
   ["scissors and a toothbrush", ["scissors", "toothbrush"]],
   ["nothing recognisable here", []],
+  ["a hot dog on a plate", ["hot dog"]],
+  ["a teddy bear on a bed", ["bed", "teddy bear"]],
+  ["a woman wearing glasses", ["person"]],
+  ["a man in an orange shirt", ["person"]],
+  ["an orange and a banana", ["banana", "orange"]],
 ];
 for (const [text, want] of rules) {
   const got = sortedArray(mentionedObjects(text));
