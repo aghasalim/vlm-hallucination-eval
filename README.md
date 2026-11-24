@@ -1,5 +1,3 @@
-<p align="center"><img src="assets/banner.jpg" alt="Line drawing of an eye looking at a framed picture, and a speech bubble holding an object that is not in the picture" width="100%"></p>
-
 # Hallucination-aware captioning, with an adversarial set I built by hand
 
 [![ci](https://github.com/aghasalim/vlm-hallucination-eval/actions/workflows/ci.yml/badge.svg)](https://github.com/aghasalim/vlm-hallucination-eval/actions/workflows/ci.yml)
