@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.jpg" alt="Line drawing of an eye looking at a framed picture, and a speech bubble holding an object that is not in the picture" width="100%"></p>
+
 # Hallucination-aware captioning, with an adversarial set I built by hand
 
 [![ci](https://github.com/aghasalim/vlm-hallucination-eval/actions/workflows/ci.yml/badge.svg)](https://github.com/aghasalim/vlm-hallucination-eval/actions/workflows/ci.yml)
@@ -23,6 +25,20 @@ opposite, and I think what I found is more interesting.
 
 
 ---
+
+<details>
+<summary>Contents</summary>
+
+- [Abstract](#abstract)
+- [1. Findings](#1-findings)
+- [2. The evaluation set](#2-the-evaluation-set)
+- [3. Limitations](#3-limitations)
+- [4. Running it](#4-running-it)
+- [5. Method](#5-method)
+- [6. Licence](#6-licence)
+- [References](#references)
+
+</details>
 
 ## Abstract
 
